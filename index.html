@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SpaceXpress </title>
+    <link href="https://fonts.googleapis.com/css?family=Biryani" rel="stylesheet">
+    <!--font-family: 'Biryani', sans-serif;-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <a id="logo"></a>
+            <h1>SpaceXpress- The Sky is not the Limit.</h1>
+
+                <form class="search" action="/action_page.php">
+                    <input type="text" placeholder="Search.." name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+
+            <section id="user">
+                <a>
+                    <h3></h3>
+                    <img src="">
+                </a>
+            </section>
+            <nav>
+                <ul>
+                    <li>Flights</li>
+                    <li>
+                        Trips
+                        <!--needs adjustments to for js and shit-->
+                       <!-- https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_navbar_dropdown3-->
+                        <div class="w3-dropdown-click">
+                            <button class="w3-button" onclick="myFunction()">
+                                Dropdown <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div id="demo" class="w3-dropdown-content w3-bar-block w3-card-4">
+                                <a href="#" class="w3-bar-item w3-button">Link 1</a>
+                                <a href="#" class="w3-bar-item w3-button">Link 2</a>
+                                <a href="#" class="w3-bar-item w3-button">Link 3</a>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li>Attractions</li>
+                    <li>My Profile</li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="bookFlight">
+            <h2>Where are we flying?</h2>
+            <form class="book">
+                <input type="radio" name="flight" value="one" checked>
+                <input type="radio" name="flight" value="round">
+                <input type="radio" name="flight" value="multi">
+                <input type="text" name="from">
+                <input type="text" name="to">
+                <input type="date" name="depart">
+                <input type="date" name="return">
+                <input type="number" name="pass">
+                <input type="submit" name="searchFlight">
+            </form>
+        </section>
+
+        <section id="journeys">
+            <h2>Journeys that are out of this world ;)</h2>
+
+            <!--has to be created with js-->
+            <!--actually there are many things that will have to be created with js.....-->
+            <article class="hpArtic">
+                <a><img src=""></a>
+                <h2></h2>
+                <ul class="info">
+                    <li>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </li>
+                    <li>Reviews:</li>
+                    <li>Planets:</li>
+                    <li class="tags"></li>
+                </ul>
+                <section class="Featured Post">
+                    <article>
+                        <h3></h3>
+                        <p></p>
+                        <a>Read more...</a>
+                    </article>
+                </section>
+
+                <section class="Featured Attractions">
+                    <a>
+                        <p></p>
+                        <img src="">
+                        <!--icons and rating system-->
+                    </a>
+                </section>
+            </article>
+        </section>
+    </div>
+</body>
+</html>
