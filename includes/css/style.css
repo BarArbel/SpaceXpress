@@ -1,0 +1,42 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+header, nav, aside, article, section, footer, main {
+    display:block;
+}
+
+#wrapper {
+    width: 1200px;
+    height: auto;
+    margin: 0px auto;
+    font-family: 'Biryani', sans-serif;
+}
+
+#logo {
+    width:230px;
+    height:130px;
+    float:left;
+    background-image: url("");
+}
+
+#search {
+    float:left;
+}
+
+header nav {
+    list-style-type: none;
+
+}
+
+header li {
+    list-style-type: none;
+    display: inline;
+
+}
+
+#user {
+    width:221px;
+    float:right;
+}

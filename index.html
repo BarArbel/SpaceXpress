@@ -2,19 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>SpaceXpress </title>
     <link href="https://fonts.googleapis.com/css?family=Biryani" rel="stylesheet">
     <!--font-family: 'Biryani', sans-serif;-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="includes/css/style.css">
+    <title>SpaceXpress </title>
 </head>
 <body>
     <div id="wrapper">
         <header>
             <a id="logo"></a>
-            <h1>SpaceXpress- The Sky is not the Limit.</h1>
 
                 <form class="search" action="/action_page.php">
+                    <h1>SpaceXpress- The Sky is not the Limit.</h1>
                     <input type="text" placeholder="Search.." name="search">
                     <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
@@ -27,25 +31,25 @@
             </section>
             <nav>
                 <ul>
-                    <li>Flights</li>
+                    <li><a href="#">Flights</a></li>
                     <li>
                         Trips
                         <!--needs adjustments to for js and shit-->
                        <!-- https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_navbar_dropdown3-->
-                        <div class="w3-dropdown-click">
-                            <button class="w3-button" onclick="myFunction()">
-                                Dropdown <i class="fa fa-caret-down"></i>
+                        <div class="dropdown">
+                            <button onclick="myFunction()">
+                                Trips <i class="fa fa-caret-down"></i>
                             </button>
-                            <div id="demo" class="w3-dropdown-content w3-bar-block w3-card-4">
-                                <a href="#" class="w3-bar-item w3-button">Link 1</a>
-                                <a href="#" class="w3-bar-item w3-button">Link 2</a>
-                                <a href="#" class="w3-bar-item w3-button">Link 3</a>
-                            </div>
+                            <ul id="demo" class="w3-dropdown-content w3-bar-block w3-card-4">
+                                <li><a href="PlanTrip.html">Plan a trip</a></li>
+                                <li><a href="#">Recommended journals</a></li>
+                            </ul>
                         </div>
 
                     </li>
-                    <li>Attractions</li>
-                    <li>My Profile</li>
+
+                    <li><a href="#">Attractions</a></li>
+                    <li><a href="#">My Profile</a></li>
                 </ul>
             </nav>
         </header>
@@ -103,5 +107,10 @@
             </article>
         </section>
     </div>
+    <script>
+        (function () {
+            initIndex ();
+        });
+    </script>
 </body>
 </html>
