@@ -3,6 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>SpaceXpress- Plan a Trip</title>
+    <link href="https://fonts.googleapis.com/css?family=Biryani" rel="stylesheet">
+    <!--font-family: 'Biryani', sans-serif;-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="includes/css/style.css">
+    <script src="includes/js/PlanTripScript.js"></script>
 </head>
 <body>
     <div id="wrapper">
@@ -10,6 +18,12 @@
 <!--            copy of index header-->
         </header>
         <section>
+            <h6>
+                <a href="index.html">Dashboard</a>
+                 >> Trips >> Plan a Trip
+            </h6>
+        </section>
+        <!--<section>
             <ul>
                 <li>Dashboard</li>
                 <li>Trips</li>
@@ -17,8 +31,60 @@
             </ul>
 
 
+        </section>-->
+        <section>
+            <h1>Plan a Trip</h1>
+            <div id="accordion">
+                <div class="card">
+                    <div id="heading1" class="card-header">
+                        <h5 class="mb-0">
+                            Destinations
+                        </h5>
+                    </div>
+                    <div id="collapse1" class="collapse show" aria-labelledby="heading1" data-parent="#accordion">
+                        <div class="card-body">
+                            <form id="tripForm1" action="#" method="get" target="frame1">
+                                <iframe name="frame1" hidden></iframe>
+                                <button id="addForm1" type="button" class="btn btn-secondary">Add more</button><br>
+                                <input id="contTrip1" class="btn btn-link collapsed" type="submit" value="Continue" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div id="heading2" class="card-header">
+                        <h5 class="mb-0">
+                            Places to Visit
+                        </h5>
+                    </div>
+                    <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordion">
+                        <div class="card-body">
+                            <form id="tripForm2" action="#" method="get" target="frame2">
+                                <iframe name="frame2" hidden></iframe>
+                                <button id="addForm2" type="button" class="btn btn-secondary">Add more</button><br>
+                                <input id="contTrip2" class="btn btn-link collapsed" type="submit" value="Continue" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div id="heading3" class="card-header">
+                        <h5 class="mb-0">
+                            Summary
+                        </h5>
+                    </div>
+                    <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordion">
+                        <div class="card-body">
+                            <form id="tripForm3" action="#" method="get" target="frame3">
+                                <iframe name="frame3" hidden></iframe>
+                                <button type="button" class="btn btn-secondary" id="addForm3">Add more</button><br>
+                                <input id="contTrip3" class="btn btn-secondary" type="submit" value="Add to 'My Trips'">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
-
     </div>
 </body>
 </html>
