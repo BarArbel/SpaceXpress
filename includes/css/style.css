@@ -9,6 +9,7 @@ header, nav, aside, article, section, footer, main {
 
 body {
     background-color: black;
+    background-image: url("../../images/beautiful-blue-stars-fill.jpg");
 }
 
 #wrapper {
@@ -26,18 +27,25 @@ header {
     width:230px;
     height:130px;
     float:left;
-    background-image: url("");
+    margin-right: 12px;
+    background-image: url("../../images/sheep.png");
+    background-size: 230px 130px;
 }
 
 #search {
     float:left;
 }
 
+h1 {
+    color: #ffffff;
+}
+
 #search h1 {
     font-size: 26px;
+
 }
 #search input {
-    width: 380px;;
+    width: 380px;
 }
 
 header nav {
