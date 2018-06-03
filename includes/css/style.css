@@ -243,3 +243,27 @@ input[type=radio]:checked ~ label:hover{
     border-bottom-right-radius: 20px;
 }
 
+/*-------------------- plan a trip --------------------*/
+
+.cardNumber {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.form-check-article {
+    display: inline-block;
+    margin: 5px;
+    width: 231px;
+    height: 173px;
+    background-color: #2196f3;
+}
+
+.form-check-input {
+    display: none;
+}
