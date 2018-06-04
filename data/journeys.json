@@ -11,7 +11,12 @@
    "t1":"Opan Gund",
   "t2":"WardcM4rrv",
   "p1":"../../images/colorful_beach_nebula-wide.jpg",
-  "p2":"../../images/free-sci-fi-wallpaper_010014836_283.jpg"},
+  "p2":"../../images/free-sci-fi-wallpaper_010014836_283.jpg",
+  "attr1":3,
+  "attr2":5,
+  "icon1":,
+  "icon2":,
+  "icon3":},
 
   {"id":2,
     "profile":"../../images/Omri4.png",
@@ -26,4 +31,9 @@
     "t1":"Tentacool4 School",
     "t2":" Haukila  ",
     "p1":"../../images/Capture.png",
-    "p2":"../../images/walle-socialnetwork05.jpg"}]
+    "p2":"../../images/walle-socialnetwork05.jpg",
+    "attr1":5,
+    "attr2":4,
+    "icon1":,
+    "icon2":,
+    "icon3":}]
