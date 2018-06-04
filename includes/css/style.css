@@ -9,6 +9,7 @@ header, nav, aside, article, section, footer, main {
 
 body {
     background-color: black;
+    background-image: url("../../images/beautiful-blue-stars-fill.jpg");
 }
 
 #wrapper {
@@ -26,18 +27,37 @@ header {
     width:230px;
     height:130px;
     float:left;
-    background-image: url("");
+    margin-right: 12px;
+    background-image: url("../../images/sheep.png");
+    background-size: 230px 130px;
 }
 
-#search {
-    float:left;
-}
-
-#search h1 {
+.search h1 {
     font-size: 26px;
+    color: #ffffff;
+
 }
-#search input {
-    width: 380px;;
+
+.search input, .search button{
+    height: 35px;
+    background: none;
+}
+.search input {
+    width: 380px;
+    color: #ffffff;
+    border-radius: 3px;
+    border-color: #ffffff;
+    margin-bottom: 24px;
+}
+
+.search button  {
+    position:relative;
+    top: 5px;
+    margin-left: 10px;
+    font-size: 18px;
+    color: #ffffff;
+    border: none;
+
 }
 
 header nav {
@@ -126,7 +146,14 @@ header li a:hover {
 
 
 #bookFlight {
+    width: 1015px;
+    position: relative;
+    margin: 0px auto;
     margin-top: 27px;
+}
+
+#bookFlight h2 {
+    color: #ffffff;
 }
 
 .book div {
@@ -229,6 +256,8 @@ input[type=radio]:checked ~ label:hover{
     width: 192px;
     height:46px;
     color: #ffffff;
+    text-align: center;
+    font-size: 18px;
     background: rgba(255,255,255,0.4);
     border: 1px solid #ffffff;
 }
@@ -243,6 +272,25 @@ input[type=radio]:checked ~ label:hover{
     border-bottom-right-radius: 20px;
 }
 
+.flightDeats button {
+    position:relative;
+    top: 5px;
+    margin-left: 10px;
+    color: #ffffff;
+    font-size: 30px;
+    background: none;
+    border: none;
+}
+
+#journeys {
+    width: 1015px;
+    margin: 0px auto;
+}
+
+#journeys h2 {
+    margin-top: 96px;
+    color: #ffffff;
+}
 /*-------------------- plan a trip --------------------*/
 
 .cardNumber {
