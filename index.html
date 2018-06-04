@@ -12,7 +12,7 @@
 <body>
     <div id="wrapper">
         <header>
-            <a id="logo"></a>
+            <a id="logo" href="index.html"></a>
 
                 <form class="search" action="/action_page.php">
                     <h1>SpaceXpress- The Sky is not the Limit.</h1>
@@ -46,25 +46,21 @@
         <section id="bookFlight">
             <h2>Where are we flying?</h2>
             <form class="book">
-<!--                <input type="radio" name="flight" value="one" checked>
-                <input type="radio" name="flight" value="round">
-                <input type="radio" name="flight" value="multi">-->
-
                 <ul>
                     <li>
-                        <input type="radio" name="flight" id="o-option" value="one" checked>
+                        <input type="radio" name="flight" id="o-option" class="option" value="one" checked>
                         <label for="o-option">One Way</label>
                         <div class="check"></div>
                     </li>
 
                     <li>
-                        <input type="radio" name="flight" id="r-option" value="round">
+                        <input type="radio" name="flight" id="r-option" class="option" value="round">
                         <label for="r-option">Round Trip</label>
                         <div class="check"></div>
                     </li>
 
                     <li>
-                        <input type="radio" name="flight" id="m-option" value="multi">
+                        <input type="radio" name="flight" id="m-option" class="option" value="multi">
                         <label for="m-option">Multi-Planet</label>
                         <div class="check"></div>
                     </li>
@@ -73,12 +69,7 @@
                 <br>
 
                 <section class="flightDeats">
-                <input type="text" name="from">
-                <input type="text" name="to">
-                <input type="date" name="depart">
-                <input type="date" name="return">
-                <input type="number" name="pass">
-                    <button type="submit" name="searchFlight">
+                    <button class="searbtn" type="submit" name="searchFlight">
                         <i class="fas fa-arrow-right"></i>
                     </button>
                 </section>
@@ -86,50 +77,55 @@
         </section>
 
         <section id="journeys">
-            <h2>Journeys that are out of this world ;)</h2>
+                        <h2>Journeys that are out of this world ;)</h2>
 
-            <!--has to be created with js-->
-            <!--actually there are many things that will have to be created with js.....-->
-            <article class="hpArtic">
-                <a><img src=""></a>
-                <h2></h2>
-                <ul class="info">
-                    <li>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                    </li>
-                    <li>Reviews:</li>
-                    <li>Planets:</li>
-                    <li class="tags"></li>
-                </ul>
-                <section class="featuredPost">
-                    <article>
-                        <h3></h3>
-                        <p></p>
-                        <a>Read more...</a>
-                    </article>
-                </section>
+                        <!--has to be created with js-->
+                        <!--actually there are many things that will have to be created with js.....-->
+                        <article class="hpArtic">
+                            <a><img src=""></a>
+                            <h2></h2>
+                            <ul class="info">
+                                <li>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </li>
+                                <li>Reviews:</li>
+                                <li>Planets:</li>
+                                <li class="tags"></li>
+                            </ul>
+                            <section class="featuredPost">
+                                <article>
+                                    <h3></h3>
+                                    <p></p>
+                                    <a>Read more...</a>
+                                </article>
+                            </section>
 
-                <section class="featuredAttractions">
-                    <a>
-                        <p></p>
-                        <img src="">
-                        <!--icons and rating system-->
-                    </a>
-                </section>
-            </article>
+                            <section class="featuredAttractions">
+                                <a>
+                                    <p></p>
+                                    <img src="">
+                                    <!--icons and rating system-->
+                                </a>
+                            </section>
+                        </article>
+        </section>
+
+        <section class="back2top">
+            <p>Top</p>
         </section>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-    <script src="includes/js/PlanTripScript.js"></script>
+    <script src="includes/js/main.js"></script>
     <script>
-        (function () {
-            initIndex ();
+        $(document).ready(function(){
+            initIndex();
         });
     </script>
 

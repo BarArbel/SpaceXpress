@@ -60,10 +60,6 @@ header {
 
 }
 
-header nav {
-
-}
-
 header ul {
     display: flex;
     flex:1;
@@ -100,8 +96,10 @@ header li a:hover {
 /* Dropdown Button */
 .dropbtn {
     width:230px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     background-color: #333333;
-    color: white;
+    color: #ffffff;
     border: none;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
@@ -115,8 +113,9 @@ header li a:hover {
 .dropdown-content {
     display: none;
     position: absolute;
+    text-align: center;
     background-color: #f1f1f1;
-    min-width: 160px;
+    width: 230px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
@@ -131,7 +130,10 @@ header li a:hover {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #eeeeee}
+.dropdown-content a:hover {
+    background-color: #eeeeee;
+    border-radius: 0px;
+}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
@@ -252,6 +254,17 @@ input[type=radio]:checked ~ label:hover{
     margin-top: 40px;
 }
 
+.flightDeats .fas {
+    color: #aaaaaa;
+    font-size: 26px;
+    margin: 5px;
+}
+
+.flightDeats .fas:hover {
+    color: #ffffff;
+    cursor: pointer;
+}
+
 .flightDeats input {
     width: 192px;
     height:46px;
@@ -260,17 +273,36 @@ input[type=radio]:checked ~ label:hover{
     font-size: 18px;
     background: rgba(255,255,255,0.4);
     border: 1px solid #ffffff;
+    margin-bottom: 3px;
 }
 
-.flightDeats input:nth-child(1) {
+.flightDeats input:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.flightDeats input:focus {
+    border: 3px solid #ffffff;
+}
+
+.flightDeats input:disabled {
+    background: rgba(255,255,255,0);
+    color: #1a1a1a;
+}
+
+.flightDeats ::placeholder {
+    color: #ffffff;
+}
+
+.flightDeats input:nth-child(5n) {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.flightDeats input:nth-child(5n-4) {
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
 }
 
-.flightDeats input:nth-child(5) {
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
 
 .flightDeats button {
     position:relative;
@@ -290,6 +322,29 @@ input[type=radio]:checked ~ label:hover{
 #journeys h2 {
     margin-top: 96px;
     color: #ffffff;
+}
+
+.back2top {
+    width:100px;
+    height:50px;
+    bottom:30px;
+    right:0;
+    visibility: hidden;
+    text-align: center;
+    position: fixed;
+    background-color: #ffffff;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.back2top p {
+    font-size: 26px;
+    font-weight: bold;
+    margin-top:10px;
+}
+
+.back2top:hover {
+    cursor: pointer;
 }
 /*-------------------- plan a trip --------------------*/
 
