@@ -1,5 +1,3 @@
-
-
 [{"id":1,
   "profile":"../../images/tro4.png",
   "title":"My first space journey / ",
@@ -25,9 +23,3 @@
     "parag":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus...",
     "attr1": [{"id":16,"name":" Haukila  ","planet":"HD 219134 b","rating":4,"alien":false,"gravity":false,"timeflow":true,"ai":false,"elements":true}],
     "attr2": [{"id":13,"name":"WardcM4rrv","planet":"HD 219134 b","rating":5,"alien":true,"gravity":false,"timeflow":true,"ai":false,"elements":true}]}]
-
-
-/*"p1":"../../images/colorful_beach_nebula-wide.jpg",
-"p2":"../../images/free-sci-fi-wallpaper_010014836_283.jpg",
-"p1":"../../images/Capture.png",
-"p2":"../../images/walle-socialnetwork05.jpg",*/
