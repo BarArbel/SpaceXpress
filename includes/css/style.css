@@ -364,9 +364,51 @@ input[type=radio]:checked ~ label:hover{
     margin: 5px;
     width: 231px;
     height: 173px;
-    background-color: #2196f3;
+    background-color: #777777;
 }
 
 .form-check-input {
     display: none;
+}
+
+.info {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    color: #ffffff;
+}
+
+.emptySelect {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 24px;
+    border-color: #ffffff;
+    opacity: 0.6;
+    border-style: solid;
+    border-width: 2pt;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.fullSelect {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 24px;
+    color: #ffffff;
+    font-size: 18px;
+    background-color: #2196f3;
+}
+
+#selectedAttractions {
+    display: inline-block;
+}
+
+#selectedNumber {
+    display: inline-block;
 }
