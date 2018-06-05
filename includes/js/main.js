@@ -153,9 +153,15 @@ function getData () {
 
                 '<section>'+
                     '<h4>Featured Attractions</h4>'+
-                    '<a href="#">'+journeys.t1+'<img src="'+ journeys.p1 +'"> </a>'+
+                    '<section>'+
+                        '<a href="#">'+journeys.t1+'<img src="'+ journeys.p1 +'"> </a>'+
+                        '<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>'+
+                    '</section>'+
 
-                    '<a href="#">'+journeys.t2+'<img src="'+ journeys.p2 +'"> </a>'+
+                    '<section>'+
+                        '<a href="#">'+journeys.t2+'<img src="'+ journeys.p2 +'"> </a>'+
+                        '<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>'+
+                    '</section>'+
                  '</section>'
             )
             console.log('where is my data');
