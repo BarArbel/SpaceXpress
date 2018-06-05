@@ -193,6 +193,13 @@ function getData () {
 
 
 
+/*"p1":"../../images/colorful_beach_nebula-wide.jpg",
+"p2":"../../images/free-sci-fi-wallpaper_010014836_283.jpg",
+"p1":"../../images/Capture.png",
+"p2":"../../images/walle-socialnetwork05.jpg",*/
+
+
+
 /* ---------------page related--------------- */
 
 window.onscroll = function() {scrollFunction()};
