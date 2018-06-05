@@ -361,7 +361,7 @@ input[type=radio]:checked ~ label:hover{
 
 .form-check-article {
     display: inline-block;
-    margin: 5px;
+    margin-bottom: 10px;
     width: 231px;
     height: 173px;
     background-color: #777777;
