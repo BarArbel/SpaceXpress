@@ -36,7 +36,9 @@ function stage1() {
 function stage2() {
     var json_data = [];
     var attractionCounter = 0;
+    var recommendedCounter = 0;
     var selected = 0;
+    var recommended = document.getElementById("recommended");
     var attractions = document.getElementById("attractions");
     var searchAttr = document.getElementById("attractionSearch");
     var alienFilter = document.getElementById("alienFilter");
@@ -142,7 +144,13 @@ function stage2() {
             labelCheck.appendChild(attraction);
             formCheck.appendChild(inputCheck);
             formCheck.appendChild(labelCheck);
-            attractions.appendChild(formCheck);
+            if(recommendedCounter < 3 && row.gravity){
+                recommended.appendChild(formCheck);
+                recommendedCounter++;
+            }
+            else {
+                attractions.appendChild(formCheck);
+            }
 
             attraction.addEventListener("mouseover", showCheck);
             attraction.addEventListener("mouseout", hideCheck);
@@ -170,7 +178,7 @@ function stage2() {
     }
 
     function reorderSelected(num){
-        for (var i = 0; i < attractionCounter; i++){
+        for (var i = 0; i < attractionCounter - recommendedCounter; i++){
             var attraction = attractions.getElementsByTagName("article")[i];
             if(attractions.getElementsByTagName("input")[i].checked){
                 var oldNum = attraction.getElementsByClassName("fullSelect")[0];
@@ -178,19 +186,34 @@ function stage2() {
                     oldNum.innerHTML = "" + (Number(oldNum.innerHTML) - 1);
                 }
             }
+            if(i < recommendedCounter){
+                var attractionRec = recommended.getElementsByTagName("article")[i];
+                if(recommended.getElementsByTagName("input")[i].checked){
+                    var oldNumRec = attractionRec.getElementsByClassName("fullSelect")[0];
+                    if(Number(oldNumRec.innerHTML) > num){
+                        oldNumRec.innerHTML = "" + (Number(oldNumRec.innerHTML) - 1);
+                    }
+                }
+            }
         }
     }
 
     function showEmpty(){
-        for (var i = 0; i < attractionCounter; i++){
+        for (var i = 0; i < attractionCounter - recommendedCounter; i++){
             attractions.getElementsByClassName("emptySelect")[i].style.display = "";
+            if(i < recommendedCounter){
+                recommended.getElementsByClassName("emptySelect")[i].style.display = "";
+            }
         }
         document.getElementById("selectedAttractions").style.display = "";
     }
 
     function hideEmpty(){
-        for (var i = 0; i < attractionCounter; i++){
+        for (var i = 0; i < attractionCounter - recommendedCounter; i++){
             attractions.getElementsByClassName("emptySelect")[i].style.display = "none";
+            if(i < recommendedCounter){
+                recommended.getElementsByClassName("emptySelect")[i].style.display = "none";
+            }
         }
         document.getElementById("selectedAttractions").style.display = "none";
     }
@@ -225,7 +248,7 @@ function stage2() {
 
     searchAttr.onkeyup = function attractionsByName() {
         var filter = searchAttr.value.toUpperCase();
-        for(var i=0; i<attractionCounter; i++){
+        for(var i=0; i<attractionCounter - recommendedCounter; i++){
             var attraction = attractions.getElementsByTagName("article")[i];
             if(attraction){
                 if(attraction.name.toUpperCase().indexOf(filter) > -1){
@@ -239,7 +262,7 @@ function stage2() {
     };
 
     function attractionsFilterOn(filter) {
-        for(var i=0; i<attractionCounter; i++){
+        for(var i=0; i<attractionCounter - recommendedCounter; i++){
             var attraction = attractions.getElementsByTagName("article")[i];
             if(attraction){
                 if(!attraction[filter] && attraction.style.display != "none"){
@@ -250,7 +273,7 @@ function stage2() {
     }
 
     function attractionsFilterOff(){
-        for(var i=0; i<attractionCounter; i++){
+        for(var i=0; i<attractionCounter - recommendedCounter; i++){
             var attraction = attractions.getElementsByTagName("article")[i];
             if(attraction){
                 if(attraction.style.display == "none"){
