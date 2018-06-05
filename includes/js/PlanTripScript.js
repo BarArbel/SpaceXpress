@@ -56,16 +56,16 @@ function stage2() {
         json_data = data;
 
         for (var row of data) {
-            var formCheck = document.createElement("div");
+            var formCheck = document.createElement("section");
             var inputCheck = document.createElement("input");
             var labelCheck = document.createElement("label");
             var attraction = document.createElement("article");
             var attInfo = document.createElement("a");
             var attInfoIcon = document.createElement("i");
             var attName = document.createElement("h6");
-            var attSelectContainer = document.createElement("div");
-            var attSelectFull = document.createElement("div");
-            var attSelectEmpty = document.createElement("div");
+            var attSelectContainer = document.createElement("section");
+            var attSelectFull = document.createElement("section");
+            var attSelectEmpty = document.createElement("section");
             var attSelectIcon = document.createElement("i");
 
             attractionCounter++;
