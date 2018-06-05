@@ -91,27 +91,33 @@
                                     We're sure you'll love these places:
                                 </h5>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                    <label class="form-check-label" for="inlineCheckbox1"><article class="form-check-article"></article></label>
+                                    <input class="form-check-input" type="checkbox" id="RecommendedAttraction1" value="option1">
+                                    <label class="form-check-label" for="RecommendedAttraction1"><article class="form-check-article"></article></label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                                    <label class="form-check-label" for="inlineCheckbox2"><article class="form-check-article"></article></label>
+                                    <input class="form-check-input" type="checkbox" id="RecommendedAttraction2" value="option2">
+                                    <label class="form-check-label" for="RecommendedAttraction2"><article class="form-check-article"></article></label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-                                    <label class="form-check-label" for="inlineCheckbox3"><article class="form-check-article"></article></label>
+                                    <input class="form-check-input" type="checkbox" id="RecommendedAttraction3" value="option3">
+                                    <label class="form-check-label" for="RecommendedAttraction3"><article class="form-check-article"></article></label>
                                 </div>
                                 <h5 class="mb-0">
                                     Day 1
                                     <input id="day" type="date" name="day">
                                 </h5>
                                 <input id="attractionSearch" type="text" placeholder="Search by name...">
-                                <button id="alienFilter" class="btn btn-primary" type="button" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="fab fa-reddit-alien"></i> Alien Society</button>
-                                <button id="gravityFilter" class="btn btn-primary" type="button" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="fab fa-grav"></i> Gravity</button>
-                                <button id="timeFilter" class="btn btn-primary" type="button" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="fas fa-clock"></i> Time Flow</button>
-                                <button id="aiFilter" class="btn btn-primary" type="button" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="fas fa-robot"></i> AI</button>
-                                <button id="elementsFilter" class="btn btn-primary" type="button" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="fab fa-ethereum"></i> New Elements</button>
+                                <h6 id="selectedAttractions">
+                                    <div id="selectedNumber">0</div>
+                                    Selected
+                                </h6>
+                                <section id="buttonFilters">
+                                    <button id="alienFilter" class="btn btn-primary" type="button" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="fab fa-reddit-alien"></i> Alien Society</button>
+                                    <button id="gravityFilter" class="btn btn-primary" type="button" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="fab fa-grav"></i> Gravity</button>
+                                    <button id="timeFilter" class="btn btn-primary" type="button" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="fas fa-clock"></i> Time Flow</button>
+                                    <button id="aiFilter" class="btn btn-primary" type="button" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="fas fa-robot"></i> AI</button>
+                                    <button id="elementsFilter" class="btn btn-primary" type="button" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="fab fa-ethereum"></i> New Elements</button>
+                                </section>
                                 <section id="attractions"></section>
                                 <button id="contTrip2" class="btn btn-link collapsed" type="submit" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
                                     <i class="fas fa-arrow-down"></i>
