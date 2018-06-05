@@ -46,7 +46,8 @@ function stage2() {
     var timeFilter = document.getElementById("timeFilter");
     var aiFilter = document.getElementById("aiFilter");
     var elementsFilter = document.getElementById("elementsFilter");
-
+    var rownum = 0;
+    var n =50;  /*scroll check*/
     alienFilter.toggleState = false;
     gravityFilter.toggleState = false;
     timeFilter.toggleState = false;
@@ -54,109 +55,128 @@ function stage2() {
     elementsFilter.toggleState = false;
 
     $.getJSON("data/attractions.json", function (data) {
-        console.log(data);
         json_data = data;
-
         for (var row of data) {
-            var formCheck = document.createElement("section");
-            var inputCheck = document.createElement("input");
-            var labelCheck = document.createElement("label");
-            var attraction = document.createElement("article");
-            var attInfo = document.createElement("a");
-            var attInfoIcon = document.createElement("i");
-            var attName = document.createElement("h6");
-            var attSelectContainer = document.createElement("section");
-            var attSelectFull = document.createElement("section");
-            var attSelectEmpty = document.createElement("section");
-            var attSelectIcon = document.createElement("i");
-
-            attractionCounter++;
-            attraction.className = "form-check-article";
-            attraction.id = row.planet + "_" + row.name;
-            attraction.name =row.name;
-            attraction.planet =row.planet;
-            attraction.rating =row.rating;
-            attraction.alien =row.alien;
-            attraction.gravity =row.gravity;
-            attraction.timeflow =row.timeflow;
-            attraction.ai =row.ai;
-            attraction.elements =row.elements;
-
-            formCheck.className = "form-check form-check-inline";
-
-            inputCheck.className = "form-check-input";
-            inputCheck.type = "checkbox";
-            inputCheck.id = "attraction" + attractionCounter;
-            inputCheck.value = attraction.id;
-
-            labelCheck.className = "form-check-label";
-            labelCheck.htmlFor = inputCheck.id;
-
-            attInfoIcon.className = "fas fa-info-circle";
-            attInfo.appendChild(attInfoIcon);
-            attInfo.className = "info";
-            attInfo.href = "#";
-            attraction.appendChild(attInfo);
-            attName.innerHTML = row.name;
-            attraction.appendChild(attName);
-            attSelectIcon.className = "fas fa-check-circle";
-            attSelectIcon.style.display = "none";
-            attSelectEmpty.appendChild(attSelectIcon);
-            attSelectEmpty.className = "emptySelect";
-            attSelectEmpty.style.display = "none";
-            attSelectContainer.appendChild(attSelectEmpty);
-            attSelectFull.className = "fullSelect";
-            attSelectFull.style.display = "none";
-            attSelectContainer.appendChild(attSelectFull);
-            attSelectContainer.className = "select";
-            attraction.appendChild(attSelectContainer);
-            for (var i=1; i<=row.rating; i++){
-                var attStar = document.createElement("i");
-                attStar.className = "fas fa-star";
-                attraction.appendChild(attStar);
+            if (row.id<=9){
+                rownum = row.id;
+                addAttr();
             }
-            if (row.alien){
-                var attAlien = document.createElement("i");
-                attAlien.className = "fab fa-reddit-alien";
-                attraction.appendChild(attAlien);
-            }
-            if (row.gravity){
-                var attGravity = document.createElement("i");
-                attGravity.className = "fab fa-grav";
-                attraction.appendChild(attGravity);
-            }
-            if (row.timeflow){
-                var attTime = document.createElement("i");
-                attTime.className = "fas fa-clock";
-                attraction.appendChild(attTime);
-            }
-            if (row.ai){
-                var attAi = document.createElement("i");
-                attAi.className = "fas fa-robot";
-                attraction.appendChild(attAi);
-            }
-            if (row.elements){
-                var attElements = document.createElement("i");
-                attElements.className = "fab fa-ethereum";
-                attraction.appendChild(attElements);
-            }
-
-            labelCheck.appendChild(attraction);
-            formCheck.appendChild(inputCheck);
-            formCheck.appendChild(labelCheck);
-            if(recommendedCounter < 3 && row.gravity){
-                recommended.appendChild(formCheck);
-                recommendedCounter++;
-            }
-            else {
-                attractions.appendChild(formCheck);
-            }
-
-            attraction.addEventListener("mouseover", showCheck);
-            attraction.addEventListener("mouseout", hideCheck);
-            attraction.addEventListener("click", selectCheck);
         }
     });
+
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if ((document.body.scrollTop > n || document.documentElement.scrollTop > n)&& (rownum< json_data.length-1)){
+            n+=50;
+            for (var i=0; i<3; i++)
+            {
+                addAttr();
+                rownum++;
+            }
+        }
+    }
+
+    function addAttr () {
+        var row= json_data[rownum];
+        var formCheck = document.createElement("section");
+        var inputCheck = document.createElement("input");
+        var labelCheck = document.createElement("label");
+        var attraction = document.createElement("article");
+        var attInfo = document.createElement("a");
+        var attInfoIcon = document.createElement("i");
+        var attName = document.createElement("h6");
+        var attSelectContainer = document.createElement("section");
+        var attSelectFull = document.createElement("section");
+        var attSelectEmpty = document.createElement("section");
+        var attSelectIcon = document.createElement("i");
+
+        attractionCounter++;
+        attraction.className = "form-check-article";
+        attraction.id = row.planet + "_" + row.name;
+        attraction.name =row.name;
+        attraction.planet =row.planet;
+        attraction.rating =row.rating;
+        attraction.alien =row.alien;
+        attraction.gravity =row.gravity;
+        attraction.timeflow =row.timeflow;
+        attraction.ai =row.ai;
+        attraction.elements =row.elements;
+
+        formCheck.className = "form-check form-check-inline";
+
+        inputCheck.className = "form-check-input";
+        inputCheck.type = "checkbox";
+        inputCheck.id = "attraction" + attractionCounter;
+        inputCheck.value = attraction.id;
+
+        labelCheck.className = "form-check-label";
+        labelCheck.htmlFor = inputCheck.id;
+
+        attInfoIcon.className = "fas fa-info-circle";
+        attInfo.appendChild(attInfoIcon);
+        attInfo.className = "info";
+        attInfo.href = "#";
+        attraction.appendChild(attInfo);
+        attName.innerHTML = row.name;
+        attraction.appendChild(attName);
+        attSelectIcon.className = "fas fa-check-circle";
+        attSelectIcon.style.display = "none";
+        attSelectEmpty.appendChild(attSelectIcon);
+        attSelectEmpty.className = "emptySelect";
+        attSelectEmpty.style.display = "none";
+        attSelectContainer.appendChild(attSelectEmpty);
+        attSelectFull.className = "fullSelect";
+        attSelectFull.style.display = "none";
+        attSelectContainer.appendChild(attSelectFull);
+        attSelectContainer.className = "select";
+        attraction.appendChild(attSelectContainer);
+        for (var i=1; i<=row.rating; i++){
+            var attStar = document.createElement("i");
+            attStar.className = "fas fa-star";
+            attraction.appendChild(attStar);
+        }
+        if (row.alien){
+            var attAlien = document.createElement("i");
+            attAlien.className = "fab fa-reddit-alien";
+            attraction.appendChild(attAlien);
+        }
+        if (row.gravity){
+            var attGravity = document.createElement("i");
+            attGravity.className = "fab fa-grav";
+            attraction.appendChild(attGravity);
+        }
+        if (row.timeflow){
+            var attTime = document.createElement("i");
+            attTime.className = "fas fa-clock";
+            attraction.appendChild(attTime);
+        }
+        if (row.ai){
+            var attAi = document.createElement("i");
+            attAi.className = "fas fa-robot";
+            attraction.appendChild(attAi);
+        }
+        if (row.elements){
+            var attElements = document.createElement("i");
+            attElements.className = "fab fa-ethereum";
+            attraction.appendChild(attElements);
+        }
+
+        labelCheck.appendChild(attraction);
+        formCheck.appendChild(inputCheck);
+        formCheck.appendChild(labelCheck);
+        if(recommendedCounter < 3 && row.gravity){
+            recommended.appendChild(formCheck);
+            recommendedCounter++;
+        }
+        else {
+            attractions.appendChild(formCheck);
+        }
+
+        attraction.addEventListener("mouseover", showCheck);
+        attraction.addEventListener("mouseout", hideCheck);
+        attraction.addEventListener("click", selectCheck);
+    }
 
     function showCheck(){
         var inputId = this.parentNode.htmlFor;
