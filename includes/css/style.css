@@ -314,12 +314,12 @@ input[type=radio]:checked ~ label:hover{
     border: none;
 }
 
-#journeys {
+main {
     width: 1015px;
     margin: 0px auto;
 }
 
-#journeys h2 {
+main h2 {
     margin-top: 96px;
     color: #ffffff;
 }

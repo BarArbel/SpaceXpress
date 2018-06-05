@@ -3,15 +3,17 @@ var sear = document.getElementsByClassName('searbtn');
 var deats = document.getElementsByClassName('flightDeats');
 var inp = document.getElementsByTagName('input');
 
-function initIndex () {
+/*function initIndex () {
 
     for (var i=0; i<check.length; i++) {
+        console.log("yo");
         check[i].addEventListener("click",changeForm);
     }
     addFlight();
-    document.addEventListener('click', function(){ document.documentElement.scrollTop = 0;});
+    document.addEventListener('click', function(){ document.documentElement.scrollTop = 0; console.log("yo");});
+    console.log("yo");
     getData();
-}
+}*/
 
 /* ---------------flight related--------------- */
 
@@ -165,7 +167,7 @@ function getData () {
                  '</section>'
             )
             console.log('where is my data');
-            $('#journeys').append(journey)
+            $('main').append(journey)
         }
     });
 
@@ -189,6 +191,10 @@ function getData () {
     "p2":"../../images/free-sci-fi-wallpaper_010014836_283.jpg"},
 */
 
+
+
+/* ---------------page related--------------- */
+
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
@@ -199,3 +205,12 @@ function scrollFunction() {
     }
 }
 
+$( document ).ready(function() {
+
+    for (var i=0; i<check.length; i++) {
+        check[i].addEventListener("click",changeForm);
+    }
+    addFlight();
+    document.addEventListener('click', function(){ document.documentElement.scrollTop = 0;});
+    getData();
+});
