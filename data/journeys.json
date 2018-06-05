@@ -1,3 +1,5 @@
+
+
 [{"id":1,
   "profile":"../../images/tro4.png",
   "title":"My first space journey / ",
@@ -8,15 +10,8 @@
   "tags":" Food, Science, Alien, Cultures...",
   "ptitle":"How to prepare for Hinlonk",
   "parag":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus...",
-   "t1":"Opan Gund",
-  "t2":"WardcM4rrv",
-  "p1":"../../images/colorful_beach_nebula-wide.jpg",
-  "p2":"../../images/free-sci-fi-wallpaper_010014836_283.jpg",
-  "attr1":3,
-  "attr2":5,
-  "icon1":,
-  "icon2":,
-  "icon3":},
+  "attr1": [{"id":16,"name":"Opan Gund","planet":"HD 219134 b","rating":3,"alien":false,"gravity":false,"timeflow":true,"ai":false,"elements":true}],
+  "attr2": [{"id":13,"name":"WardcM4rrv","planet":"HD 219134 b","rating":5,"alien":true,"gravity":false,"timeflow":true,"ai":false,"elements":true}]},
 
   {"id":2,
     "profile":"../../images/Omri4.png",
@@ -28,12 +23,11 @@
     "tags":" Science, Alien, Experiment, Trekking...",
     "ptitle":"Capture the Wonders of Nature",
     "parag":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus...",
-    "t1":"Tentacool4 School",
-    "t2":" Haukila  ",
-    "p1":"../../images/Capture.png",
-    "p2":"../../images/walle-socialnetwork05.jpg",
-    "attr1":5,
-    "attr2":4,
-    "icon1":,
-    "icon2":,
-    "icon3":}]
+    "attr1": [{"id":16,"name":" Haukila  ","planet":"HD 219134 b","rating":4,"alien":false,"gravity":false,"timeflow":true,"ai":false,"elements":true}],
+    "attr2": [{"id":13,"name":"WardcM4rrv","planet":"HD 219134 b","rating":5,"alien":true,"gravity":false,"timeflow":true,"ai":false,"elements":true}]}]
+
+
+/*"p1":"../../images/colorful_beach_nebula-wide.jpg",
+"p2":"../../images/free-sci-fi-wallpaper_010014836_283.jpg",
+"p1":"../../images/Capture.png",
+"p2":"../../images/walle-socialnetwork05.jpg",*/

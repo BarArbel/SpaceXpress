@@ -14,7 +14,7 @@
         <header>
             <a id="logo" href="index.html"></a>
 
-                <form class="search" action="/action_page.php">
+                <form class="search" action="#" method="get">
                     <h1>SpaceXpress- The Sky is not the Limit.</h1>
                     <input type="text" placeholder="Search.." name="search">
                     <button type="submit"><i class="fa fa-search"></i></button>
@@ -45,7 +45,7 @@
 
         <section id="bookFlight">
             <h2>Where are we flying?</h2>
-            <form class="book">
+            <form class="book" action="#" method="get">
                 <ul>
                     <li>
                         <input type="radio" name="flight" id="o-option" class="option" value="one" checked>
@@ -76,7 +76,7 @@
             </form>
         </section>
 
-        <section id="journeys">
+        <main>
                         <h2>Journeys that are out of this world ;)</h2>
 
                         <!--has to be created with js-->
@@ -112,7 +112,7 @@
                                 </a>
                             </section>
                         </article>
-        </section>
+        </main>
 
         <section class="back2top">
             <p>Top</p>
@@ -123,11 +123,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     <script src="includes/js/main.js"></script>
-    <script>
-        $(document).ready(function(){
-            initIndex();
-        });
-    </script>
-
 </body>
 </html>
