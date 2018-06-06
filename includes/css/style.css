@@ -595,12 +595,19 @@ main h2 {
     font-size: 26px;
 }
 
+#tripForm2{
+    position: relative;
+}
+
 #tripForm2 h5:nth-of-type(1){
+    position: relative;
+    left: 230px;
     margin: 0 auto;
 }
 
 #recommended, #attractions{
     float: right;
+    position: relative;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
@@ -621,6 +628,7 @@ main h2 {
     width: 1200px;
     bottom: 0px;
     margin-left: -120px;
+    z-index: 2;
 }
 
 #contTrip2 i{
@@ -634,7 +642,6 @@ main h2 {
     height: 173px;
     margin-bottom: 12px;
     margin-right: 12px;
-    background-color: #777777;
 }
 
 .form-check-article h6{
@@ -643,6 +650,15 @@ main h2 {
     top: 7px;
     left: 20px;
     color: #ffffff;
+    z-index: 1;
+}
+
+.form-check-article img{
+    position: absolute;
+    width: 231px;
+    height: 173px;
+    top: 0px;
+    left: 0px;
 }
 
 .form-check-input {
@@ -656,6 +672,7 @@ main h2 {
     width: 16px;
     height: 16px;
     color: #ffffff;
+    z-index: 1;
 }
 
 .info:hover{
@@ -731,6 +748,8 @@ main h2 {
 }
 
 #selectedAttractions{
+    display: flex;
+    justify-content: center;
     float: right;
     width: 231px;
     height: 29px;
@@ -747,9 +766,13 @@ main h2 {
     border-top-right-radius: 20px;
 }
 
-#buttonFilters{/*
-    float: left;*/
-    margin-right: 0;
+#selectedNumber {
+    margin-right: 10px;
+}
+
+#buttonFilters{
+    position: relative;
+    float: left;
     display: flex;
     flex-direction: column;
     width: 229px;
@@ -762,21 +785,6 @@ main h2 {
     color: #7a7a7a;
     border: none;
     border-bottom: 2px solid #c0c0c0;
-}
-
-/*.btn-outline-primary{
-    color: #2196f3;
-    background-color: #ffffff;
-    border: none;
-    border-bottom: 2px solid #c0c0c0;
-}*/
-
-#selectedAttractions {
-    display: inline-block;
-}
-
-#selectedNumber {
-    display: inline-block;
 }
 
 #tripForm3 article {

@@ -84,6 +84,7 @@ function stage2() {
         var attInfo = document.createElement("a");
         var attInfoIcon = document.createElement("i");
         var attName = document.createElement("h6");
+        var attImg = document.createElement("img");
         var attSelectContainer = document.createElement("section");
         var attSelectFull = document.createElement("section");
         var attSelectEmpty = document.createElement("section");
@@ -119,6 +120,8 @@ function stage2() {
         attraction.appendChild(attInfo);
         attName.innerHTML = row.name;
         attraction.appendChild(attName);
+        attImg.src = "images/Image_62 (1).png";
+        attraction.appendChild(attImg);
         attSelectIcon.className = "fas fa-check-circle";
         attSelectIcon.style.display = "none";
         attSelectEmpty.appendChild(attSelectIcon);
@@ -224,7 +227,7 @@ function stage2() {
                 recommended.getElementsByClassName("emptySelect")[i].style.display = "";
             }
         }
-        document.getElementById("selectedAttractions").style.display = "";
+        document.getElementById("selectedAttractions").style.visibility = "visible";
     }
 
     function hideEmpty(){
@@ -234,7 +237,7 @@ function stage2() {
                 recommended.getElementsByClassName("emptySelect")[i].style.display = "none";
             }
         }
-        document.getElementById("selectedAttractions").style.display = "none";
+        document.getElementById("selectedAttractions").style.visibility = "hidden";
     }
 
     function selectCheck(){
@@ -370,7 +373,7 @@ function stage2() {
     aiFilter.addEventListener("click", function(){attractionsFilterState("ai");});
     elementsFilter.addEventListener("click", function(){attractionsFilterState("elements");});
 
-    document.getElementById("selectedAttractions").style.display = "none";
+    document.getElementById("selectedAttractions").style.visibility = "hidden";
 }
 
 function stage3() {
