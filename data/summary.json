@@ -1,0 +1,6 @@
+[{"id":1,"name":"Amyo","planet":"HD 219134 b","day":1,"date":"03.04.2118","address":"5467.23;7534.01;3426.99;0.005","place":1,"alien":true,"gravity":false,"timeflow":false,"ai":false,"elements":true},
+  {"id":2,"name":"The Honaut","planet":"HD 219134 b","day":1,"date":"03.04.2118","address":"5467.23;2003.04;5801.67;0.00021","place":2,"alien":false,"gravity":false,"timeflow":false,"ai":true,"elements":true},
+  {"id":3,"name":"GlendaxElphab","planet":"HD 219134 b","day":1,"date":"03.04.2118","address":"3957.00;1199.021;34264.4;0.205","place":3,"alien":true,"gravity":false,"timeflow":true,"ai":false,"elements":true},
+  {"id":4,"name":"The Aldrox","planet":"HD 219134 b","day":2,"date":"04.04.2118","address":"5467.23;7104.01;3426.53;0.012","place":1,"alien":false,"gravity":true,"timeflow":false,"ai":true,"elements":false},
+  {"id":5,"name":"Mann","planet":"HD 219134 b","day":2,"date":"04.04.2118","address":"5467.23;2003.04;5801.67;0.00021","place":2,"alien":false,"gravity":false,"timeflow":false,"ai":false,"elements":true},
+  {"id":6,"name":"Mann","planet":"HD 219134 b","day":3,"date":"05.04.2118","address":"5467.23;2003.04;5801.67;0.00021","place":1,"alien":false,"gravity":false,"timeflow":false,"ai":false,"elements":true}]

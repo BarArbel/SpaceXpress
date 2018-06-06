@@ -485,3 +485,18 @@ main h2 {
 #selectedNumber {
     display: inline-block;
 }
+
+#tripForm3 article {
+    display: block;
+    width: 441px;
+    height: 214px;
+    background-color: #777777;
+}
+
+.ddContainer {
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    width: 451px;
+    height: 224px;
+}
