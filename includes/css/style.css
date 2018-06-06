@@ -284,7 +284,7 @@ input[type=radio]:checked ~ label:hover{
     color: #ffffff;
 }
 
-.breadcrumbs {
+/*.breadcrumbs {
     background-color: #ffffff;
 }
 
@@ -298,7 +298,7 @@ input[type=radio]:checked ~ label:hover{
 .breadcrumbs h6 {
     margin-top: 5px;
     position: absolute;
-}
+}*/
 
 .flightDeats {
     margin-top: 40px;
@@ -485,10 +485,8 @@ main h2 {
 
 
 .breadcrumbs{
-    margin: 0px;
     padding: 10px;
     background-color: #ffffff;
-
 }
 
 .breadcrumbs a{
@@ -501,32 +499,36 @@ main h2 {
     font-size: 14px;
 }
 
-.plan {
+#plan {
     background-color: #ffffff;
     color: #000000;
 }
 
-.plan h1 {
+#plan h2 {
+    padding-left: 120px;
     color: #000000;
+}
+
+.card, .card-header, .card-body{
+    background-color: #ffffff;
+    border: none;
 }
 
 .card {
-    border: none;
+    padding-left: 100px;
+    padding-right: 100px;
     border-bottom: 1px solid #dddddd;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
 
-.card-header{
-    background-color: #ffffff;
-    border: none;
-    border-bottom: 1px solid #dddddd;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+.mb-0{
+    line-height: 30px;
+    font-size: 26px;
 }
 
 .cardNumber {
-    display: inline-block;
+    float: left;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -535,6 +537,29 @@ main h2 {
     background-color: #333333;
     color: #ffffff;
 }
+
+#icons{
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    width: 583px;
+}
+
+#tripForm1 i{
+    font-size:30px
+}
+
+#tripForm1 input:nth-child(3n-2){
+    width: 279px;
+    height: 45px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+/*#tripForm1 input:nth-child(3n-1){
+    width: 279px;
+    height: 45px;
+}*/
 
 .form-check-article {
     display: inline-block;
