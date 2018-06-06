@@ -37,6 +37,7 @@ header {
 h1 {
     font-size: 26px;
     color: #ffffff;
+    margin-top: 20px;
 }
 
 .search{
@@ -280,6 +281,22 @@ input[type=radio]:checked ~ label{
 
 input[type=radio]:checked ~ label:hover{
     color: #ffffff;
+}
+
+.breadcrumbs {
+    background-color: #ffffff;
+}
+
+.breadcrumbs h2 {
+    padding-top: 45px;
+    margin-left: 30px;
+    color: #000000;
+    font-size: 30px;
+}
+
+.breadcrumbs h6 {
+    margin-top: 5px;
+    position: absolute;
 }
 
 .flightDeats {
@@ -560,81 +577,11 @@ main h2 {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*-------------------- my trips --------------------*/
 
 #trips {
+    margin-top: 0;
     background-color: #ffffff;
 }
+
+#trips

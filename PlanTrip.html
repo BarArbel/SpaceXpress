@@ -13,18 +13,15 @@
     <div id="wrapper">
         <header>
             <a id="logo" href="index.html"></a>
-
+            <h1>SpaceXpress- The Sky is not the Limit.</h1>
             <form class="search" action="#" method="get">
-                <h1>SpaceXpress- The Sky is not the Limit.</h1>
                 <input type="text" placeholder="Search.." name="search">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
 
             <section id="user">
-                <a>
-                    <h3></h3>
-                    <img src="">
-                </a>
+                <h6>Welcome, Mai!</h6>
+                <a href="#"><img src="images/sheep.png"></a>
             </section>
             <nav>
                 <ul>
@@ -36,107 +33,107 @@
                             <li><a href="#" class="w3-bar-item w3-button">Recommended journals</a></li>
                         </ul>
                     </li>
-
                     <li><a href="#">Attractions</a></li>
                     <li><a href="#">My Profile</a></li>
                 </ul>
             </nav>
         </header>
-        <section>
+        <section class="breadcrumbs">
             <h6>
                 <a href="index.html">Dashboard</a>
                  >> Trips >> Plan a Trip
             </h6>
+            <h2>Plan a Trip</h2>
+            <section>
+                <div id="accordion">
+                    <div class="card">
+                        <div id="heading1" class="card-header">
+                            <h5 class="mb-0">
+                                <div class="cardNumber">1</div>
+                                Destinations
+                            </h5>
+                        </div>
+                        <div id="collapse1" class="collapse show" aria-labelledby="heading1" data-parent="#accordion">
+                            <div class="card-body">
+                                <form id="tripForm1" action="#" method="get" target="frame1">
+                                    <iframe name="frame1" hidden></iframe>
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <i class="far fa-calendar-alt"></i>
+                                    <i class="far fa-calendar-alt"></i>
+                                    <button id="addForm1" type="button" class="btn btn-secondary">Add more</button><br>
+                                    <button id="contTrip1" class="btn btn-link collapsed" type="submit" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                        <i class="fas fa-arrow-down"></i>
+                                        Continue
+                                        <i class="fas fa-arrow-down"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div id="heading2" class="card-header">
+                            <h5 class="mb-0">
+                                <div class="cardNumber">2</div>
+                                Places to Visit
+                            </h5>
+                        </div>
+                        <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordion">
+                            <div class="card-body">
+                                <form id="tripForm2" action="#" method="get" target="frame2">
+                                    <iframe name="frame2" hidden></iframe>
+                                    <h5 class="mb-0">
+                                        <i class="fas fa-heart"></i>
+                                        We're sure you'll love these places:
+                                    </h5>
+                                    <section id="recommended"></section>
+                                    <h5 class="mb-0">
+                                        Day 1
+                                        <input id="day" type="date" name="day">
+                                    </h5>
+                                    <input id="attractionSearch" type="text" placeholder="Search by name...">
+                                    <h6 id="selectedAttractions">
+                                        <section id="selectedNumber">0</section>
+                                        Selected
+                                    </h6>
+                                    <section id="buttonFilters">
+                                        <button id="alienFilter" class="btn btn-primary" type="button" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="fab fa-reddit-alien"></i> Alien Society</button>
+                                        <button id="gravityFilter" class="btn btn-primary" type="button" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="fab fa-grav"></i> Gravity</button>
+                                        <button id="timeFilter" class="btn btn-primary" type="button" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="fas fa-clock"></i> Time Flow</button>
+                                        <button id="aiFilter" class="btn btn-primary" type="button" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="fas fa-robot"></i> AI</button>
+                                        <button id="elementsFilter" class="btn btn-primary" type="button" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="fab fa-ethereum"></i> New Elements</button>
+                                    </section>
+                                    <section id="attractions"></section>
+                                    <button id="contTrip2" class="btn btn-link collapsed" type="submit" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                        <i class="fas fa-arrow-down"></i>
+                                        Continue
+                                        <i class="fas fa-arrow-down"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div id="heading3" class="card-header">
+                            <h5 class="mb-0">
+                                <div class="cardNumber">3</div>
+                                Summary
+                            </h5>
+                        </div>
+                        <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordion">
+                            <div class="card-body">
+                                <form id="tripForm3" action="#" method="get" target="frame3">
+                                    <iframe name="frame3" hidden></iframe>
+                                    <button id="contTrip3" class="btn btn-secondary" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" type="submit">Add to 'My Trips'</button>
+                                    <button id="print" class="btn btn-secondary" type="button"><i class="fas fa-print"></i></button>
+                                    <button id="download" class="btn btn-secondary" type="button"><i class="fas fa-download"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </section>
-        <section>
-            <h1>Plan a Trip</h1>
-            <div id="accordion">
-                <div class="card">
-                    <div id="heading1" class="card-header">
-                        <h5 class="mb-0">
-                            <div class="cardNumber">1</div>
-                            Destinations
-                        </h5>
-                    </div>
-                    <div id="collapse1" class="collapse show" aria-labelledby="heading1" data-parent="#accordion">
-                        <div class="card-body">
-                            <form id="tripForm1" action="#" method="get" target="frame1">
-                                <iframe name="frame1" hidden></iframe>
-                                <i class="fas fa-map-marker-alt"></i>
-                                <i class="far fa-calendar-alt"></i>
-                                <i class="far fa-calendar-alt"></i>
-                                <button id="addForm1" type="button" class="btn btn-secondary">Add more</button><br>
-                                <button id="contTrip1" class="btn btn-link collapsed" type="submit" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                                    <i class="fas fa-arrow-down"></i>
-                                    Continue
-                                    <i class="fas fa-arrow-down"></i>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div id="heading2" class="card-header">
-                        <h5 class="mb-0">
-                            <div class="cardNumber">2</div>
-                            Places to Visit
-                        </h5>
-                    </div>
-                    <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordion">
-                        <div class="card-body">
-                            <form id="tripForm2" action="#" method="get" target="frame2">
-                                <iframe name="frame2" hidden></iframe>
-                                <h5 class="mb-0">
-                                    <i class="fas fa-heart"></i>
-                                    We're sure you'll love these places:
-                                </h5>
-                                <section id="recommended"></section>
-                                <h5 class="mb-0">
-                                    Day 1
-                                    <input id="day" type="date" name="day">
-                                </h5>
-                                <input id="attractionSearch" type="text" placeholder="Search by name...">
-                                <h6 id="selectedAttractions">
-                                    <section id="selectedNumber">0</section>
-                                    Selected
-                                </h6>
-                                <section id="buttonFilters">
-                                    <button id="alienFilter" class="btn btn-primary" type="button" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="fab fa-reddit-alien"></i> Alien Society</button>
-                                    <button id="gravityFilter" class="btn btn-primary" type="button" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="fab fa-grav"></i> Gravity</button>
-                                    <button id="timeFilter" class="btn btn-primary" type="button" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="fas fa-clock"></i> Time Flow</button>
-                                    <button id="aiFilter" class="btn btn-primary" type="button" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="fas fa-robot"></i> AI</button>
-                                    <button id="elementsFilter" class="btn btn-primary" type="button" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="fab fa-ethereum"></i> New Elements</button>
-                                </section>
-                                <section id="attractions"></section>
-                                <button id="contTrip2" class="btn btn-link collapsed" type="submit" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                                    <i class="fas fa-arrow-down"></i>
-                                    Continue
-                                    <i class="fas fa-arrow-down"></i>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div id="heading3" class="card-header">
-                        <h5 class="mb-0">
-                            <div class="cardNumber">3</div>
-                            Summary
-                        </h5>
-                    </div>
-                    <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordion">
-                        <div class="card-body">
-                            <form id="tripForm3" action="#" method="get" target="frame3">
-                                <iframe name="frame3" hidden></iframe>
-                                <button id="contTrip3" class="btn btn-secondary" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" type="submit">Add to 'My Trips'</button>
-                                <button id="print" class="btn btn-secondary" type="button"><i class="fas fa-print"></i></button>
-                                <button id="download" class="btn btn-secondary" type="button"><i class="fas fa-download"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
 
         <!-- Modal -->
         <div id="myModal" class="modal fade" role="dialog">
