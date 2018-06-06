@@ -13,10 +13,15 @@ body {
 }
 
 #wrapper {
+    position: relative;
     width: 1200px;
     height: auto;
     margin: 0px auto;
     font-family: 'Biryani', sans-serif;
+}
+
+.clear{
+    clear: both;
 }
 
 header {
@@ -32,10 +37,13 @@ header {
     background-size: 230px 130px;
 }
 
-.search h1 {
+h1 {
     font-size: 26px;
     color: #ffffff;
+}
 
+.search{
+    float:left;
 }
 
 .search input, .search button{
@@ -57,17 +65,41 @@ header {
     font-size: 18px;
     color: #ffffff;
     border: none;
+}
+
+#user {
+    position: absolute;
+    float:right;
+    top: 10px;
+    right: 10px;
+}
+
+#user h6{
+    display: inline-block;
+    color: #ffffff;
+}
+
+#user img{
+    display: inline-block;
+    width: 79px;
+    height: 79px;
+    border-radius: 50%;
 
 }
 
+nav{
+    float: right;
+}
+
 header ul {
+    width: 956px;
     display: flex;
     flex:1;
     justify-content: space-between;
 }
 header li {
-    float: left;
-    margin-right: 12px;
+    width:230px;
+    height:32px;
     list-style-type: none;
     background-color: #333333;
     border-top-left-radius: 8px;
@@ -75,11 +107,11 @@ header li {
 }
 
 header li a {
+    display: block;
     width:230px;
     height:32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    line-height: 32px;
     text-decoration: none;
     color: #ffffff;
     font-size: 14px;
@@ -93,21 +125,22 @@ header li a:hover {
     border-top-right-radius: 8px;
 }
 
+.dropbtn:hover{
+    color: #000000;
+    background-color: #f7f6f6;
+}
+
 /* Dropdown Button */
 .dropbtn {
     width:230px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    height:32px;
     background-color: #333333;
     color: #ffffff;
     border: none;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     font-size: 14px;
-
-
 }
-
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
@@ -138,14 +171,13 @@ header li a:hover {
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
     display: block;
+    color: #000000;
+    background-color: #f7f6f6;
+    text-decoration: none;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 
 }
-
-#user {
-    width:221px;
-    float:right;
-}
-
 
 #bookFlight {
     width: 1015px;
@@ -357,45 +389,57 @@ main h2 {
 
 }
 
-.jour h3 {
-    padding-top: 25px;
-}
-
-.jour h3, .jour ul, .jour h4 {
-    margin-left: 60px;
+.jour h3, .jour ul {
+    display: inline-block;
+    margin-left: 15px;
 }
 
 .jour li {
     margin: 2px;
     list-style-type: none;
     float:left;
+    font-size: 18px;
 }
 
 .jour img {
+    display: inline-block;
     width: 35px;
     height: 35px;
-    margin-left: 14px;
-    position: absolute;
-    margin-top:20px;
+    margin-left: 15px;
+    font-size: 12px;
 }
 
 .jour p {
     width:400px;
     margin-top: 5px;
-    margin-left: 15px;
     position: relative;
 }
 
-.attr section:nth-of-type(1) {
+.jour p a{
     float: right;
+    margin-right: 15px;
+    color: #ffffff;
 }
 
-.jour section:nth-of-type(2) h4 {
-    margin-left: 0px;
+/*.attr section:nth-of-type(1) {
+    float: right;
+}*/
+
+.jour section:nth-of-type(1) {
+    margin-left: 15px;
 }
 
-.jour section {
+.jour section:nth-of-type(2) {
+    float: right;
+    margin-right: 15px;
+}
+
+/*.jour section {
     float: left;
+}*/
+
+.jour h4{
+
 }
 
 
@@ -499,6 +543,11 @@ main h2 {
     margin-right: 10px;
     width: 451px;
     height: 224px;
+}
+
+
+#tripForm3 input{
+    display: none;
 }
 
 .modal-content table{

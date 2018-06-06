@@ -133,7 +133,7 @@ function getData () {
                             '<span class="fa fa-star "></span>'+
                         '</li> '+
 
-                        '<li>Reviews '+
+                        '<li>&nbsp;Reviews '+
                             journeys.review + ' | '+
                         '</li>'+
 
