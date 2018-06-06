@@ -803,11 +803,87 @@ main h2 {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*-------------------- my trips --------------------*/
 
 #trips {
-    margin-top: 0;
+    min-height: 500px;
+    padding-bottom: 15px;
     background-color: #ffffff;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 
-#trips
+#trips h3 {
+    margin-left: 15px;
+    margin-bottom: 15px;
+    float:left;
+}
+
+#trips .modal-title {
+    text-align: center;
+}
+
+.tripTimeline {
+    width: 1200px;
+    height: 172px;
+}
+
+.tripTimeline section:nth-of-type(1) section{
+    width:128px;
+    margin-right: 120px;
+    float:left;
+    text-align: center;
+}
+
+.tripTimeline section:nth-of-type(1) section:nth-of-type(1){
+    width: 1000px;
+    float:left;
+}
+
+.line {
+    position: absolute;
+    margin-top: 70px;
+    background-color: #777777;
+    height: 6px;
+    margin-left: 15px;
+}
+
+.buttons {
+    width: 135px;
+    float:right;
+    margin-right: 20px;
+}
+
+.buttons button {
+    width: 133px;
+    margin: 5px;
+}
+
+
+#trips button:nth-of-type(3) {
+    background-color: #62c462;
+}
+
+#trips button:nth-of-type(3):hover {
+    background-color: #438543;
+}
