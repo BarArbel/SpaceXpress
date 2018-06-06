@@ -589,9 +589,8 @@ main h2 {
     font-size: 26px;
 }
 
-#tripForm2 .mb-0:nth-child(1){
-    margin: 0px auto;
-    float: right;
+#tripForm2 h5:nth-of-type(1){
+    margin: 0 auto;
 }
 
 #recommended, #attractions{
@@ -602,6 +601,7 @@ main h2 {
     flex-direction: row;
     width: 730px;
     height: auto;
+    margin-bottom: 30px
 }
 
 .forme-check, .form-check-inline{
@@ -690,7 +690,7 @@ main h2 {
     font-size: 20px;
 }
 
-#tripForm2 .mb-0:nth-child(2){
+#tripForm2 h5:nth-of-type(2){
     float: left;
 }
 
@@ -711,6 +711,7 @@ main h2 {
     width: 355px;
     height: 29px;
     margin-bottom: 15px;
+    margin-left: 12px;
     text-align: center;
     line-height: 29px;
     font-size: 14px;
@@ -728,6 +729,7 @@ main h2 {
     width: 231px;
     height: 29px;
     margin-bottom: 15px;
+    margin-right: 12px;
     text-align: center;
     line-height: 29px;
     font-size: 14px;
@@ -739,8 +741,9 @@ main h2 {
     border-top-right-radius: 20px;
 }
 
-#buttonFilters{
-    float: left;
+#buttonFilters{/*
+    float: left;*/
+    margin-right: 0;
     display: flex;
     flex-direction: column;
     width: 229px;
