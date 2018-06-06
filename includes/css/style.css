@@ -97,6 +97,7 @@ header ul {
     display: flex;
     flex:1;
     justify-content: space-between;
+    margin: 0px;
 }
 header li {
     width:230px;
@@ -481,6 +482,48 @@ main h2 {
     margin-left: 10px;
 }
 /*-------------------- plan a trip --------------------*/
+
+
+.breadcrumbs{
+    margin: 0px;
+    padding: 10px;
+    background-color: #ffffff;
+
+}
+
+.breadcrumbs a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.breadcrumbs h6{
+    margin: 0px;
+    font-size: 14px;
+}
+
+.plan {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.plan h1 {
+    color: #000000;
+}
+
+.card {
+    border: none;
+    border-bottom: 1px solid #dddddd;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.card-header{
+    background-color: #ffffff;
+    border: none;
+    border-bottom: 1px solid #dddddd;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
 
 .cardNumber {
     display: inline-block;
