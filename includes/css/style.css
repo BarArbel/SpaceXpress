@@ -20,12 +20,9 @@ body {
     font-family: 'Biryani', sans-serif;
 }
 
-.clear{
-    clear: both;
-}
-
 header {
     width:1200px;
+    height: 130px;
 }
 
 #logo {
@@ -69,18 +66,21 @@ h1 {
 
 #user {
     position: absolute;
+    display: flex;
+    justify-content: space-between;
     float:right;
+    width: 221px;
     top: 10px;
     right: 10px;
 }
 
 #user h6{
-    display: inline-block;
+    height: 79px;
+    line-height: 79px;
     color: #ffffff;
 }
 
 #user img{
-    display: inline-block;
     width: 79px;
     height: 79px;
     border-radius: 50%;
@@ -382,6 +382,7 @@ main h2 {
 .jour {
     width: 982px;
     height: 323px;
+    padding: 15px;
     margin-bottom: 50px;
     color: #ffffff;
     background-color: #444444;
@@ -389,9 +390,15 @@ main h2 {
 
 }
 
-.jour h3, .jour ul {
-    display: inline-block;
-    margin-left: 15px;
+.jour h3{
+    margin-top: 0px;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    line-height: 30px;
+}
+
+.jour ul{
+
 }
 
 .jour li {
@@ -402,10 +409,9 @@ main h2 {
 }
 
 .jour img {
-    display: inline-block;
+    float: left;
     width: 35px;
     height: 35px;
-    margin-left: 15px;
     font-size: 12px;
 }
 
@@ -421,27 +427,17 @@ main h2 {
     color: #ffffff;
 }
 
-/*.attr section:nth-of-type(1) {
-    float: right;
-}*/
-
 .jour section:nth-of-type(1) {
-    margin-left: 15px;
+    float: left;
 }
 
 .jour section:nth-of-type(2) {
     float: right;
-    margin-right: 15px;
 }
 
-/*.jour section {
-    float: left;
-}*/
-
-.jour h4{
-
+.attr{
+    position: relative;
 }
-
 
 .attr, .attr a {
     width: 240px;
@@ -449,19 +445,23 @@ main h2 {
 }
 
 .attr img {
+    position: absolute;
     width: 231px;
     height: 173px;
     margin: 0px;
 }
 
+.attr p{
+    left: 30px;
+}
+
 .attr i {
     position: relative;
-    margin-top: 100px;
-
+    margin-top: 120px;
 }
 
 .attr i:nth-of-type(1) {
-    margin-left: 15px;
+    margin-left: 10px;
 }
 /*-------------------- plan a trip --------------------*/
 
