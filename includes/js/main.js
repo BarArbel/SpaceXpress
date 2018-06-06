@@ -23,11 +23,11 @@ function changeForm () {
     {
         case 0:
             reset();
-            document.getElementsByTagName('input')[7].disabled = false;
+            document.getElementsByTagName('input')[7].disabled = true;
             break;
         case 1:
             reset();
-            document.getElementsByTagName('input')[7].disabled = true;
+            document.getElementsByTagName('input')[7].disabled = false;
             break;
         case 2:
             if (inp.length <= 9){
@@ -211,5 +211,6 @@ $( document ).ready(function() {
         check[i].addEventListener("click",changeForm);
     }
     addFlight();
+    document.getElementsByTagName('input')[7].disabled = true;
     getData();
 });
