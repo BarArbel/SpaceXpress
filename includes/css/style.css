@@ -545,6 +545,16 @@ main h2 {
     height: 224px;
 }
 
+
 #tripForm3 input{
     display: none;
+}
+
+.modal-content table{
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+.modal-content td {
+    padding-left: 20px;
 }
