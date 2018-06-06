@@ -500,3 +500,12 @@ main h2 {
     width: 451px;
     height: 224px;
 }
+
+.modal-content table{
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+.modal-content td {
+    padding-left: 20px;
+}

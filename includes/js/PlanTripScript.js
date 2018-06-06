@@ -528,13 +528,15 @@ function stage3() {
             container.style.border = "";
         }
     }
+
+    document.getElementById('save').addEventListener("submit", function(){console.log("yo"); window.open('mytrips.html', '_self');});
 }
+
 
 $(document).ready(function (){
     var continue1 = document.getElementById("contTrip1");
     var continue2 = document.getElementById("contTrip2");
     continue1.addEventListener("click", function(){stage2();});
     continue2.addEventListener("click", function(){stage3();});
-
     stage1();
 });
