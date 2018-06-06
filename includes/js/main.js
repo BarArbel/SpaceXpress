@@ -3,18 +3,6 @@ var sear = document.getElementsByClassName('searbtn');
 var deats = document.getElementsByClassName('flightDeats');
 var inp = document.getElementsByTagName('input');
 
-/*function initIndex () {
-
-    for (var i=0; i<check.length; i++) {
-        console.log("yo");
-        check[i].addEventListener("click",changeForm);
-    }
-    addFlight();
-    document.addEventListener('click', function(){ document.documentElement.scrollTop = 0; console.log("yo");});
-    console.log("yo");
-    getData();
-}*/
-
 /* ---------------flight related--------------- */
 
 function changeForm () {
@@ -117,7 +105,6 @@ function reset () {
 function getData () {
     var json_data = [];
     $.getJSON("data/journeys.json", function (data) {
-        console.log(data);
         json_data = data;
         for (var journeys of data) {
             var journey = $(
@@ -176,20 +163,6 @@ function getData () {
 
 }
 
-/*"p1":"../../images/colorful_beach_nebula-wide.jpg",
-"p2":"../../images/free-sci-fi-wallpaper_010014836_283.jpg",
-"p1":"../../images/Capture.png",
-"p2":"../../images/walle-socialnetwork05.jpg",*/
-
-/*"t1":"Tentacool4 School",
-    "t2":" Haukila  ",
-    "p1":"../../images/Capture.png",
-    "p2":"../../images/walle-socialnetwork05.jpg"*/
-
-/*"t1":"Opan Gund",
-"t2":"WardcM4rrv",
-"p1":"../../images/colorful_beach_nebula-wide.jpg",
-"p2":"../../images/free-sci-fi-wallpaper_010014836_283.jpg"*/
 
 /* ---------------page related--------------- */
 
