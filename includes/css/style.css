@@ -361,7 +361,7 @@ main h2 {
     padding-top: 25px;
 }
 
-.jour h3, .jour ul, .jour p, .jour h4 {
+.jour h3, .jour ul, .jour h4 {
     margin-left: 60px;
 }
 
@@ -382,6 +382,42 @@ main h2 {
 .jour p {
     width:400px;
     margin-top: 5px;
+    margin-left: 15px;
+    position: relative;
+}
+
+.attr section:nth-of-type(1) {
+    float: right;
+}
+
+.jour section:nth-of-type(2) h4 {
+    margin-left: 0px;
+}
+
+.jour section {
+    float: left;
+}
+
+
+.attr, .attr a {
+    width: 240px;
+    height: 190px;
+}
+
+.attr img {
+    width: 231px;
+    height: 173px;
+    margin: 0px;
+}
+
+.attr i {
+    position: relative;
+    margin-top: 100px;
+
+}
+
+.attr i:nth-of-type(1) {
+    margin-left: 15px;
 }
 /*-------------------- plan a trip --------------------*/
 
