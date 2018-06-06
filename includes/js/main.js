@@ -156,20 +156,21 @@ function getData () {
 
                     '<section>'+
                         '<h4>Featured Attractions</h4>'+
-                        '<section>'+
-                            '<a href="#">'+journeys.t1+'<img src="'+ journeys.p1 +'"> </a>'+
+                        '<section class="attr">'+
+                            '<a href="#"><img src="'+ journeys.p1 +'"></a>'+
+                            '<p>'+ journeys.t1 +'</p>'+
                             '<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>'+
                         '</section>'+
 
-                        '<section>'+
-                            '<a href="#">'+journeys.t2+'<img src="'+ journeys.p2 +'"> </a>'+
+                        '<section class="attr">'+
+                            '<a href="#"><img src="'+ journeys.p2 +'"></a>'+
+                            '<p>'+ journeys.t2 +'</p>'+
                             '<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>'+
                         '</section>'+
                     '</section>'+
                  '</section>'
             )
-            console.log('where is my data');
-            $('main').append(journey)
+            $('main').append(journey);
         }
     });
 
@@ -180,7 +181,15 @@ function getData () {
 "p1":"../../images/Capture.png",
 "p2":"../../images/walle-socialnetwork05.jpg",*/
 
+/*"t1":"Tentacool4 School",
+    "t2":" Haukila  ",
+    "p1":"../../images/Capture.png",
+    "p2":"../../images/walle-socialnetwork05.jpg"*/
 
+/*"t1":"Opan Gund",
+"t2":"WardcM4rrv",
+"p1":"../../images/colorful_beach_nebula-wide.jpg",
+"p2":"../../images/free-sci-fi-wallpaper_010014836_283.jpg"*/
 
 /* ---------------page related--------------- */
 
