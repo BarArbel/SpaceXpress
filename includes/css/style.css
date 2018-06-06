@@ -12,6 +12,7 @@ body {
     background-image: url("../../images/beautiful-blue-stars-fill.jpg");
 }
 
+
 #wrapper {
     position: relative;
     width: 1200px;
@@ -33,6 +34,11 @@ header {
     background-image: url("../../images/spacexpress2.png");
     background-size: 230px 130px;
 }
+
+a, a:visited, a:active, a:link {
+    text-decoration: none;
+}
+
 
 h1 {
     font-size: 26px;
@@ -829,6 +835,18 @@ main h2 {
 
 
 
+#tripForm3 button{
+    margin: 5px;
+    float:right;
+}
+
+#tripForm3 section{
+    float: left;
+}
+
+#tripForm3 button:nth-of-type(1) {
+    margin-right: 55px;
+}
 
 
 /*-------------------- my trips --------------------*/
@@ -894,4 +912,87 @@ main h2 {
 
 #trips button:nth-of-type(3):hover {
     background-color: #438543;
+}
+
+
+
+
+@media (max-width: 850px) {
+
+    #wrapper {
+        width: 850px;
+    }
+
+    .search {
+        visibility: hidden;
+    }
+
+    #logo {
+        width: 100px;
+
+        background-image: url(../../images/spacex.png);
+    }
+
+    #user, header h1 {
+        visibility: hidden;
+        position: absolute;
+    }
+
+
+    header {
+        width:600px;
+    }
+
+    header nav {
+        float: left;
+    }
+
+    header  li,header  li:hover, header a {
+        width: 100px;
+        border-radius: 0px;
+        margin: 0px;
+    }
+
+
+    header li a {
+        display: block;
+        width:100px;
+        text-align: center;
+        line-height: 32px;
+        color: #ffffff;
+        font-size: 14px;
+    }
+
+    .dropbtn {
+        width: 100px;
+    }
+
+    #bookFlight {
+        width:700px;
+    }
+
+    #bookFlight h2{
+        padding-top: 20px;
+    }
+    .flightDeats input {
+        width: 100px;
+    }
+
+    .jour {
+        width: 600px;
+    }
+    .jour section:nth-child(1), .jour h4, .jour p, .jour li:last-child {
+        position: absolute;
+        visibility: hidden;
+    }
+
+    .attr {
+        margin-right: 30px;
+        float: left;
+        left:0px;
+    }
+
+    .attr p {
+        visibility: visible;
+    }
 }
