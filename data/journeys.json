@@ -1,5 +1,5 @@
 [{"id":1,
-  "profile":"../../images/tro4.png",
+  "profile":"images/tro4.png",
   "title":"My first space journey / ",
   "user":"deadKenny123",
   "rating":5,
@@ -14,7 +14,7 @@
   "p2":"../../images/free-sci-fi-wallpaper_010014836_283.jpg"},
 
   {"id":2,
-    "profile":"../../images/Omri4.png",
+    "profile":"images/Omri4.png",
     "title":"Safari Experience / ",
     "user":"Samuel Oak ",
     "rating":4,

@@ -121,48 +121,50 @@ function getData () {
         json_data = data;
         for (var journeys of data) {
             var journey = $(
-                '<a href="#"> <img src="' + journeys.profile + '"></a>' +
-                '<h3>'+ journeys.title + journeys.user + '</h3>' +
-                '<ul>'+
-                    '<li>' +
-                        '<span class="fa fa-star "></span>'+
-                        '<span class="fa fa-star "></span>'+
-                        '<span class="fa fa-star "></span>'+
-                        '<span class="fa fa-star "></span>'+
-                        '<span class="fa fa-star "></span>'+
-                    '</li> '+
+                '<section class="jour">'+
+                    '<a href="#"> <img src="'+journeys.profile+'"></a>' +
+                    '<h3>'+ journeys.title + journeys.user + '</h3>' +
+                    '<ul>'+
+                        '<li>' +
+                            '<span class="fa fa-star "></span>'+
+                            '<span class="fa fa-star "></span>'+
+                            '<span class="fa fa-star "></span>'+
+                            '<span class="fa fa-star "></span>'+
+                            '<span class="fa fa-star "></span>'+
+                        '</li> '+
 
-                    '<li>' +
-                        journeys.review + ' | '+
-                    ' Reviews</li>'+
+                        '<li>Reviews '+
+                            journeys.review + ' | '+
+                        '</li>'+
 
-                    '<li>Planets: ' +
-                        journeys.planets + ' | '+
-                    '</li>'+
+                        '<li>Planets: ' +
+                            journeys.planets + ' | '+
+                        '</li>'+
 
-                    '<li>' +
-                        journeys.tags+
-                    '</li>'+
-                '</ul>'+
+                        '<li>' +
+                            journeys.tags+
+                        '</li>'+
+                    '</ul>'+
 
-                '<section>'+
-                    '<h4>Featured Post</h4>'+
-
-                    '<br><h4>'+ journeys.ptitle +'</h4>'+
-                    '<p>'+journeys.parag+'<br><a href="#">Read more...</a></p>'+
-
-                '</section>'+
-
-                '<section>'+
-                    '<h4>Featured Attractions</h4>'+
                     '<section>'+
-                        '<a href="#">'+journeys.t1+'<img src="'+ journeys.p1 +'"> </a>'+
-                        '<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>'+
+                        '<h4>Featured Post</h4>'+
+
+                        '<br><h4>'+ journeys.ptitle +'</h4>'+
+                        '<p>'+journeys.parag+'<br><a href="#">Read more...</a></p>'+
+
                     '</section>'+
 
                     '<section>'+
-                        '<a href="#">'+journeys.t2+'<img src="'+ journeys.p2 +'"> </a>'+
-                        '<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>'+
+                        '<h4>Featured Attractions</h4>'+
+                        '<section>'+
+                            '<a href="#">'+journeys.t1+'<img src="'+ journeys.p1 +'"> </a>'+
+                            '<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>'+
+                        '</section>'+
+
+                        '<section>'+
+                            '<a href="#">'+journeys.t2+'<img src="'+ journeys.p2 +'"> </a>'+
+                            '<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>'+
+                        '</section>'+
                     '</section>'+
                  '</section>'
             )
@@ -172,26 +174,6 @@ function getData () {
     });
 
 }
-
-
-/*
-[{"id":1,
-    "profile":"../../images/tro4.png",
-    "title":"My first space journey / ",
-    "user":"deadKenny123",
-    "rating":5,
-    "review":" 3,565,300,431 ",
-    "planets":" TRL0-10  ",
-    "tags":" Food, Science, Alien, Cultures...",
-    "ptitle":"How to prepare for Hinlonk",
-    "parag":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus..."
-    "t1":"Opan Gund",
-    "t2":"WardcM4rrv",
-    "p1":"../../images/colorful_beach_nebula-wide.jpg",
-    "p2":"../../images/free-sci-fi-wallpaper_010014836_283.jpg"},
-*/
-
-
 
 /*"p1":"../../images/colorful_beach_nebula-wide.jpg",
 "p2":"../../images/free-sci-fi-wallpaper_010014836_283.jpg",
@@ -205,10 +187,12 @@ function getData () {
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
+    var top = document.getElementsByClassName("back2top")[0];
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        document.getElementsByClassName("back2top")[0].style.visibility = "visible";
+        top.style.visibility = "visible";
+        top.addEventListener('click', function(){ document.documentElement.scrollTop = 0;});
     } else {
-        document.getElementsByClassName("back2top")[0].style.visibility = "hidden";
+        top.style.visibility = "hidden";
     }
 }
 
@@ -218,6 +202,5 @@ $( document ).ready(function() {
         check[i].addEventListener("click",changeForm);
     }
     addFlight();
-    document.addEventListener('click', function(){ document.documentElement.scrollTop = 0;});
     getData();
 });

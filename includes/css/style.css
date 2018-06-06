@@ -28,7 +28,7 @@ header {
     height:130px;
     float:left;
     margin-right: 12px;
-    background-image: url("../../images/sheep.png");
+    background-image: url("../../images/spacexpress2.png");
     background-size: 230px 130px;
 }
 
@@ -345,6 +345,43 @@ main h2 {
 
 .back2top:hover {
     cursor: pointer;
+}
+
+.jour {
+    width: 982px;
+    height: 323px;
+    margin-bottom: 50px;
+    color: #ffffff;
+    background-color: #444444;
+    border-radius: 20px;
+
+}
+
+.jour h3 {
+    padding-top: 25px;
+}
+
+.jour h3, .jour ul, .jour p, .jour h4 {
+    margin-left: 60px;
+}
+
+.jour li {
+    margin: 2px;
+    list-style-type: none;
+    float:left;
+}
+
+.jour img {
+    width: 35px;
+    height: 35px;
+    margin-left: 14px;
+    position: absolute;
+    margin-top:20px;
+}
+
+.jour p {
+    width:400px;
+    margin-top: 5px;
 }
 /*-------------------- plan a trip --------------------*/
 
