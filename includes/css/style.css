@@ -230,10 +230,6 @@ header li a:hover {
     -webkit-transition: all 0.25s linear;
 }
 
-/*.book ul li:hover label{
-    color: #FFFFFF;
-}*/
-
 .book ul li .check{
     display: block;
     position: absolute;
@@ -246,10 +242,6 @@ header li a:hover {
     transition: border .25s linear;
     -webkit-transition: border .25s linear;
 }
-
-/*.book ul li:hover .check {
-    border: 5px solid #FFFFFF;
-}*/
 
 .book ul li .check:hover {
     border: 5px solid #ffffff;
@@ -289,22 +281,6 @@ input[type=radio]:checked ~ label{
 input[type=radio]:checked ~ label:hover{
     color: #ffffff;
 }
-
-/*.breadcrumbs {
-    background-color: #ffffff;
-}
-
-.breadcrumbs h2 {
-    padding-top: 45px;
-    margin-left: 30px;
-    color: #000000;
-    font-size: 30px;
-}
-
-.breadcrumbs h6 {
-    margin-top: 5px;
-    position: absolute;
-}*/
 
 .flightDeats {
     margin-top: 40px;
@@ -765,7 +741,6 @@ main h2 {
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
 }
-
 #selectedNumber {
     margin-right: 10px;
 }
@@ -815,25 +790,6 @@ main h2 {
 .modal-content td {
     padding-left: 20px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #tripForm3 button{
     margin: 5px;
@@ -914,13 +870,11 @@ main h2 {
     background-color: #438543;
 }
 
-
-
-
 @media (max-width: 850px) {
 
     #wrapper {
         width: 850px;
+        margin: 0px auto;
     }
 
     .search {
@@ -943,12 +897,20 @@ main h2 {
         width:600px;
     }
 
+    header ul {
+        width: 750px;
+        display: flex;
+        flex:1;
+        justify-content: flex-start;
+        margin: 0px;
+    }
+
     header nav {
         float: left;
     }
 
     header  li,header  li:hover, header a {
-        width: 100px;
+        width: 200px;
         border-radius: 0px;
         margin: 0px;
     }

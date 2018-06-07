@@ -1,6 +1,5 @@
 var check=document.getElementsByClassName('option');
 var sear = document.getElementsByClassName('searbtn');
-var deats = document.getElementsByClassName('flightDeats');
 var inp = document.getElementsByTagName('input');
 
 /* ---------------flight related--------------- */
