@@ -791,25 +791,6 @@ main h2 {
     padding-left: 20px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #tripForm3 button{
     margin: 5px;
     float:right;
@@ -889,9 +870,6 @@ main h2 {
     background-color: #438543;
 }
 
-
-
-
 @media (max-width: 850px) {
 
     #wrapper {
@@ -932,7 +910,7 @@ main h2 {
     }
 
     header  li,header  li:hover, header a {
-        width: 100px;
+        width: 200px;
         border-radius: 0px;
         margin: 0px;
     }
