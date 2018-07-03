@@ -34,6 +34,18 @@ function stage1() {
 }
 
 function stage2() {
+    /*hello there, these are just attempts to read the db and put it into json*/
+
+    var oReq = new XMLHttpRequest(); //New request object
+    oReq.onload = function() {
+        //This is where you handle what to do with the response.
+        //The actual data is found on this.responseText
+        alert(this.responseText); //Will alert: 42
+    };
+    oReq.open("get", "get-attr.php", true);
+    oReq.send();
+
+    /*and that would be it*/
     var json_data = [];
     var attractionCounter = 0;
     var recommendedCounter = 0;
