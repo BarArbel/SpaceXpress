@@ -5,6 +5,62 @@
     <title>Title</title>
 </head>
 <body>
+<p>well well well</p>
+<script src="http://code.jquery.com/jquery.min.js" type="text/javascript"></script>
+    <script>
+/*        function reqListener () {
+            console.log(this.responseText);
+        }
+        reqListener();
+        var oReq = new XMLHttpRequest(); //New request object
+        oReq.onload = function() {
+            //This is where you handle what to do with the response.
+            //The actual data is found on this.responseText
+            alert(this.responseText); //Will alert: 42
+        };
+        oReq.open("get", "get-attr.php", true);
+        //                               ^ Don't block the rest of the execution.
+        //                                 Don't wait until the request finishes to
+        //                                 continue.
+        oReq.send();
+
+        var data = <?php echo json_encode("42", JSON_HEX_TAG); ?>;
+        console.log(data);*/
+/*        console.log("im on the case");
+
+        var mysql = require('mysql');
+        var con = mysql.createConnection({
+            host: "182.50.133.51",
+            user: "studDB18A",
+            password: "stud18aDB1!",
+            database: "auxstudDB7c"
+        });
+
+        con.connect(function(err) {
+            if (err) throw err;
+            con.query("SELECT * FROM tbl_205_attraction order by rating desc", function (err, result, fields) {
+                if (err) throw err;
+                console.log(result);
+            });
+        });*/
+
+
+        (function(){
+            console.log("yo");
+            $.getJSON('../../server/get-attr.php', function(data) {
+                console.log("yo2");
+                $.each(data, function(fieldName, fieldValue) {
+                    $("#" + fieldName).val(fieldValue);
+                    console.log("yo2.5");
+                });
+
+                console.log(data);
+            });
+
+                console.log("yo3");
+        })();
+
+    </script>
 
 </body>
 </html>

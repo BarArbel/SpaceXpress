@@ -34,18 +34,6 @@ function stage1() {
 }
 
 function stage2() {
-    /*hello there, these are just attempts to read the db and put it into json*/
-
-    var oReq = new XMLHttpRequest(); //New request object
-    oReq.onload = function() {
-        //This is where you handle what to do with the response.
-        //The actual data is found on this.responseText
-        alert(this.responseText); //Will alert: 42
-    };
-    oReq.open("get", "get-attr.php", true);
-    oReq.send();
-
-    /*and that would be it*/
     var json_data = [];
     var attractionCounter = 0;
     var recommendedCounter = 0;
@@ -66,11 +54,12 @@ function stage2() {
     aiFilter.toggleState = false;
     elementsFilter.toggleState = false;
 
-    $.getJSON("data/attractions.json", function (data) {
+    $.getJSON("server/get-attr.php", function (data) {
         json_data = data;
         for (var row of data) {
-            if (row.id<=9){
-                rownum = row.id;
+            if (row.attr_id<=9){
+                rownum = row.attr_id;
+                console.log(row);
                 addAttr();
             }
         }
@@ -150,27 +139,27 @@ function stage2() {
             attStar.className = "fas fa-star";
             attraction.appendChild(attStar);
         }
-        if (row.alien){
+        if (row.alien ==1){
             var attAlien = document.createElement("i");
             attAlien.className = "fab fa-reddit-alien";
             attraction.appendChild(attAlien);
         }
-        if (row.gravity){
+        if (row.gravity ==1){
             var attGravity = document.createElement("i");
             attGravity.className = "fab fa-grav";
             attraction.appendChild(attGravity);
         }
-        if (row.timeflow){
+        if (row.timeflow ==1){
             var attTime = document.createElement("i");
             attTime.className = "fas fa-clock";
             attraction.appendChild(attTime);
         }
-        if (row.ai){
+        if (row.ai ==1){
             var attAi = document.createElement("i");
             attAi.className = "fas fa-robot";
             attraction.appendChild(attAi);
         }
-        if (row.elements){
+        if (row.elements ==1){
             var attElements = document.createElement("i");
             attElements.className = "fab fa-ethereum";
             attraction.appendChild(attElements);
