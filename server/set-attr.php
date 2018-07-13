@@ -7,24 +7,22 @@
     $get_latest_trip = "SELECT MAX(trip_id) AS max_trip FROM tbl_205_trip";
     $trip_id = mysqli_fetch_array(mysqli_query($connection, $get_latest_trip))["max_trip"];
 
-    $get_first_date = "";
-    $nth_date = "";
-    $nth_attr = 1;
+    $get_first_date = "SELECT arrival_date FROM tbl_205_destination WHERE trip_id = $trip_id LIMIT 1";
+    $nth_date = mysqli_fetch_array(mysqli_query($connection, $get_first_date))["arrival_date"];
+    /*$nth_attr = 1;*/
 
-    for ($x = 2; $x <= $num_of_attr; $x++) {
+    for ($x = 1; $x <= $num_of_attr; $x++) {
         if (!empty($_GET['attraction' . $x])) {
-            //$attr_val = $_GET['attraction' . $x];
-            if ($nth_attr%5 ==1) {
+            $attr_val = $_GET['attraction' . $x];
+            
+            if ($x ==1) {
                 $qSetAttrs = "INSERT INTO tbl_205_day (trip_id, date, attr1_id) VALUES ($trip_id,$nth_date,$attr_val); ";
             }
             else {
                 $qSetAttrs .= "UPDATE ";
             }
 
-            if (($x%5) == 0) {
-                /*here we need to skip to the next day and create another date oh shitz*/
-            }
-            $nth_attr++;
+            /*$nth_attr++;*/
         }
     }
     /* to do list:
