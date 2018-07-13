@@ -1,3 +1,8 @@
+function getUserID() {
+    var url = window.location.href;
+    return (url.split('uid=')[1]);
+}
+
 function stage1() {
     var destinationCounter = 1;
     var tripForm1 = document.getElementById("tripForm1");
@@ -7,6 +12,7 @@ function stage1() {
         var planetNameInput = document.createElement("input");
         var startDateInput = document.createElement("input");
         var endDateInput = document.createElement("input");
+        var userID = document.createElement("input");
 
         planetNameInput.type = "text";
         planetNameInput.name = "planet" + destinationCounter;
@@ -20,6 +26,10 @@ function stage1() {
         endDateInput.type = "date";
         endDateInput.name = "end" + destinationCounter;
         endDateInput.id = "end" + destinationCounter;
+
+        userID.type = "hidden";
+        userID.name = "uid";
+        userID.value = getUserID();
 
         tripForm1.insertBefore(document.createElement("br"), addForm1);
         tripForm1.insertBefore(planetNameInput, addForm1);
@@ -47,7 +57,7 @@ function stage2() {
     var aiFilter = document.getElementById("aiFilter");
     var elementsFilter = document.getElementById("elementsFilter");
     var rownum = 0;
-    var n =173;  /*scroll check*/
+    var n =133;  /*scroll check*/
     alienFilter.toggleState = false;
     gravityFilter.toggleState = false;
     timeFilter.toggleState = false;
@@ -55,13 +65,21 @@ function stage2() {
     elementsFilter.toggleState = false;
 
     $.getJSON("server/get-attr.php", function (data) {
-        json_data = data;
-        for (var row of data) {
-            if (row.attr_id<=9){
-                rownum = row.attr_id;
-                console.log(row);
-                addAttr();
+        if(data.length) {
+            json_data = data;
+            for (var row of data) {
+                if (row.attr_id <= 9) {
+                    rownum = row.attr_id;
+                    addAttr();
+                }
             }
+        }
+        else {
+            var noData = document.createElement("p");
+            noData.style.color = "#c63f2d";
+            noData.style.margin = "20px";
+            noData.innerHTML = " Attractions only available for planet 'HD 219134 b', Sorry!";
+            document.getElementById("attractions").appendChild(noData);
         }
     });
 
@@ -168,7 +186,7 @@ function stage2() {
         labelCheck.appendChild(attraction);
         formCheck.appendChild(inputCheck);
         formCheck.appendChild(labelCheck);
-        if(recommendedCounter < 3 && row.gravity){
+        if(recommendedCounter < 3 && row.gravity == 1){
             recommended.appendChild(formCheck);
             recommendedCounter++;
         }
@@ -288,7 +306,7 @@ function stage2() {
         for(var i=0; i<attractionCounter - recommendedCounter; i++){
             var attraction = attractions.getElementsByTagName("article")[i];
             if(attraction){
-                if(!attraction[filter] && attraction.style.display != "none"){
+                if(attraction[filter]== 0 && attraction.style.display != "none"){
                     attraction.style.display = "none";
                 }
             }
@@ -300,11 +318,11 @@ function stage2() {
             var attraction = attractions.getElementsByTagName("article")[i];
             if(attraction){
                 if(attraction.style.display == "none"){
-                    if(alienFilter.toggleState && !attraction.alien){}
-                    else if(gravityFilter.toggleState && !attraction.gravity){}
-                    else if(timeFilter.toggleState && !attraction.timeflow){}
-                    else if(aiFilter.toggleState && !attraction.ai){}
-                    else if(elementsFilter.toggleState && !attraction.elements){}
+                    if(alienFilter.toggleState && attraction.alien == 0){}
+                    else if(gravityFilter.toggleState && attraction.gravity == 0){}
+                    else if(timeFilter.toggleState && attraction.timeflow == 0){}
+                    else if(aiFilter.toggleState && attraction.ai == 0){}
+                    else if(elementsFilter.toggleState && attraction.elements == 0){}
                     else{
                         attraction.style.display = "";
                     }

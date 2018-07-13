@@ -1,50 +1,36 @@
 <?php
 	include ('db.php');
-/*$qGetAttr = "SELECT * FROM tbl_205_attraction WHERE planet='' ORDER BY rating DESC";*/
-	$qGetAttr = "SELECT * FROM tbl_205_attraction ORDER BY rating DESC";
+	/*$qGetAttr = "SELECT * FROM tbl_205_attraction WHERE planet='' ORDER BY rating DESC";*/
+
+	$qGetPlanet =  "SELECT planet_name
+						FROM tbl_205_destination plnt 
+						INNER JOIN
+						(SELECT MAX(trip_id) as max_val
+						FROM tbl_205_destination) mxvl ON plnt.trip_id = mxvl.max_val LIMIT 1";
+
+	$planetName = mysqli_fetch_array(mysqli_query($connection, $qGetPlanet))["planet_name"];
+	$qGetAttr = "SELECT * FROM tbl_205_attraction WHERE planet = '$planetName' ORDER BY rating DESC";
 	$result = mysqli_query($connection, $qGetAttr);
 	if (!$result)
 	{
+		echo "Error: " . $qGetAttr . "<br>" . mysqli_error($connection);
 		die("db query failed");
 	}
 
 	$rows = array();
 	while($r = mysqli_fetch_assoc($result)) {
-    	$rows[] = $r;
+		$rows[] = $r;
 	}
 	echo json_encode($rows);
 
-/*	include('db.php');
-	
-	$query1 = "SELECT * FROM tbl_test order by title desc";
-	$result = mysqli_query($connection, $query1);
-	if(!$result) {
-		die("DB query failed.");
-	}
-	
-	if(isset($_POST['ttl'])) {
-		$ttle = mysqli_real_escape_string($connection, $_POST['ttl']);
-		$txt = mysqli_real_escape_string($connection, $_POST['desc']);
-		
-		$query2 = "insert into tbl_test(title,txt) values ('$ttle','$txt')";
-		$result = mysqli_query($connection, $query2);
-		
-		$query2 = "SELECT * FROM tbl_test order by title desc";
-		$result = mysqli_query($connection, $query2);
-	}
-	
-	echo "<ul>";
-	while($row = mysqli_fetch_assoc($result)) {
-		echo "<li><h2>" . $row["title"] . "</h2><h3>" . $row["txt"] . "</h3></li>";
-	}
-	echo "</ul>";*/
-	
 	mysqli_free_result($result);
-	
+
 	mysqli_close($connection);
+
+	/* to do list:
+	-Check why not all attractions are loaded??????
+	 */
 ?>
-
-
 
 
 
