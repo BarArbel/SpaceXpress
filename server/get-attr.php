@@ -28,7 +28,7 @@
 	mysqli_close($connection);
 
 	/* to do list:
-	-Check why not all attractions are loaded??????
+	V Check why not all attractions are loaded??????
 	 */
 ?>
 
