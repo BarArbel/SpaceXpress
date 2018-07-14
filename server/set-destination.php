@@ -47,7 +47,7 @@
     }
 
     //create a new trip too
-    $qSetDest .= "INSERT INTO tbl_205_trip (user_id) VALUES (4); ";
+    $qSetDest .= "INSERT INTO tbl_205_trip (trip_id, user_id) VALUES ($trip_id, 4); ";
     if (mysqli_multi_query($connection, $qSetDest)) {
         echo "Huge success.<br>";
     }

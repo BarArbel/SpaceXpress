@@ -6,11 +6,9 @@
     $get_latest_trip = "SELECT MAX(trip_id) AS max_trip FROM tbl_205_trip";
     $trip_id = mysqli_fetch_array(mysqli_query($connection, $get_latest_trip))["max_trip"];
 
-    /*$get_1stDate_planet = "SELECT planet_name, arrival_date FROM tbl_205_destination WHERE trip_id = $trip_id LIMIT 1";*/
     $get_1stDate_planet = "SELECT arrival_date FROM tbl_205_destination WHERE trip_id = $trip_id LIMIT 1";
     $nth_date = mysqli_fetch_array(mysqli_query($connection, $get_1stDate_planet))["arrival_date"];
 
-    /*$planet_name = mysqli_fetch_array(mysqli_query($connection, $get_1stDate_planet))["planet_name"];*/
     $nth_attr = 1; //there can be just 5 attractions for each day
 
     for ($x = 1; $x <= $num_of_attr; $x++) {
@@ -19,7 +17,7 @@
             $get_attr_id = "SELECT attr_id FROM tbl_205_attraction WHERE name LIKE '%$attr_val%'";
             $attr_id = mysqli_fetch_array(mysqli_query($connection, $get_attr_id))["attr_id"];
             if ($nth_attr ==1) {
-                $qSetAttrs = "INSERT INTO tbl_205_day (trip_id, date, attr1_id) VALUES ($trip_id,$nth_date,$attr_id); ";
+                $qSetAttrs = "INSERT INTO tbl_205_day (trip_id, trip_date, attr1_id) VALUES ($trip_id,$nth_date,$attr_id); ";
             }
             else {
                 $attr_tbl_name = 'attr' . $nth_attr . '_id';
@@ -41,9 +39,8 @@
 
     mysqli_close($connection);
     /* to do list:
-
+    -Check if Day already has a random date, if yes- gotta ++ the date value we play with
+    V Change date collumn name to trip_date
      */
 
-
-    /*i deleted from the trip tbl the day_id and the dest_id lol */
 ?>

@@ -1,6 +1,7 @@
 <?php
 	include ('db.php');
-	/*$qGetAttr = "SELECT * FROM tbl_205_attraction WHERE planet='' ORDER BY rating DESC";*/
+	sleep(1);
+	//usleep( 500000 );
 
 	$qGetPlanet =  "SELECT planet_name
 						FROM tbl_205_destination plnt 
@@ -29,6 +30,7 @@
 
 	/* to do list:
 	V Check why not all attractions are loaded??????
+	-Avoid using sleep, first it needs to upload to the server and then get stuff out of it
 	 */
 ?>
 
