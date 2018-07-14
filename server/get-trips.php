@@ -1,11 +1,26 @@
 <?php
     include('db.php');
 
-    function getUserID() {
-        var url = window.location.href;
-        return (url.split('uid=')[1]);
+
+
+
+    if(!empty($_POST['user_id'])) {
+        $user_id =$_POST['user_id'];
     }
 
-    $qGetUser = "SELECT user_id FROM tbl_205_trip WHERE user_id = getUserID()";
-    $userId = mysqli_fetch_array(mysqli_query($connection, $qGetUser))
+    $rows = array();
+    while($r = mysqli_fetch_assoc($result)) {
+        $rows[] = $r;
+    }
+    echo json_encode($rows);
+
+    mysqli_free_result($result);
+
+    mysqli_close($connection);
+
+    /* to do list:
+
+     */
+
+
 ?>
