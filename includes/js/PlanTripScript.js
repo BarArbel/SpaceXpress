@@ -518,11 +518,6 @@ function stage3() {
             attraction.id = row.name + "_" + row.planet + "_summary";
             attraction.draggable = true;
 
-            dayInput.type = "number";
-            dayInput.name = "dayID" + row.id;
-            dayInput.value = row.day_id;
-            attraction.appendChild(dayInput);
-
             attrInput.type = "number";
             attrInput.name = "attrID" + row.id;
             attrInput.value = row.attr;
@@ -532,6 +527,11 @@ function stage3() {
             attrPlaceInput.name = "attrNum" + row.id;
             attrPlaceInput.value = row.place;
             attraction.appendChild(attrPlaceInput);
+
+            dayInput.type = "number";
+            dayInput.name = "dayID" + row.id;
+            dayInput.value = row.day_id;
+            attraction.appendChild(dayInput);
 
             attInfoIcon.className = "fas fa-info-circle";
             attInfo.appendChild(attInfoIcon);
@@ -546,27 +546,27 @@ function stage3() {
             attSelect.innerText = row.place;
             attraction.appendChild(attSelect);
 
-            if (row.alien ==1){
+            if (row.alien == 1){
                 var attAlien = document.createElement("i");
                 attAlien.className = "fab fa-reddit-alien";
                 attraction.appendChild(attAlien);
             }
-            if (row.gravity ==1){
+            if (row.gravity == 1){
                 var attGravity = document.createElement("i");
                 attGravity.className = "fab fa-grav";
                 attraction.appendChild(attGravity);
             }
-            if (row.timeflow ==1){
+            if (row.timeflow == 1){
                 var attTime = document.createElement("i");
                 attTime.className = "fas fa-clock";
                 attraction.appendChild(attTime);
             }
-            if (row.ai ==1){
+            if (row.ai == 1){
                 var attAi = document.createElement("i");
                 attAi.className = "fas fa-robot";
                 attraction.appendChild(attAi);
             }
-            if (row.elements ==1){
+            if (row.elements == 1){
                 var attElements = document.createElement("i");
                 attElements.className = "fab fa-ethereum";
                 attraction.appendChild(attElements);
