@@ -4,7 +4,7 @@ function getUserID() {
 }
 
 function stage1() {
-    var destinationCounter = 1;
+    var destinationCounter = 0;
     var tripForm1 = document.getElementById("tripForm1");
     var addForm1 = document.getElementById("addForm1");
 
@@ -14,18 +14,30 @@ function stage1() {
         var endDateInput = document.createElement("input");
         var userID = document.createElement("input");
 
+        destinationCounter++;
+        if (destinationCounter >= 3){
+            addForm1.style.visibility = "hidden";
+        }
+
         planetNameInput.type = "text";
         planetNameInput.name = "planet" + destinationCounter;
         planetNameInput.placeholder = "Planet Name";
         planetNameInput.id = "planet" + destinationCounter;
+        planetNameInput.required = true;
+        planetNameInput.pattern = "[A-Za-z0-9 ]{1,}";
+        planetNameInput.title = "use letters, numbers and spaces only";
 
         startDateInput.type = "date";
         startDateInput.name = "start" + destinationCounter;
         startDateInput.id = "start" + destinationCounter;
+        startDateInput.required = true;
+        planetNameInput.title = "make sure the dates are in a correct order. between destinations too.";
 
         endDateInput.type = "date";
         endDateInput.name = "end" + destinationCounter;
         endDateInput.id = "end" + destinationCounter;
+        endDateInput.required = true;
+        planetNameInput.title = "make sure the dates are in a correct order. between destinations too.";
 
         userID.type = "hidden";
         userID.name = "uid";
@@ -35,19 +47,40 @@ function stage1() {
         tripForm1.insertBefore(planetNameInput, addForm1);
         tripForm1.insertBefore(startDateInput, addForm1);
         tripForm1.insertBefore(endDateInput, addForm1);
-
-        destinationCounter++;
     }
 
-    addForm1.addEventListener("click", function() {createForm1Input();});
+    tripForm1.onsubmit = function() {
+        var reg = /[^A-Za-z0-9 ]/;
+        for(var i = 1; i <= destinationCounter; i++) {
+            if(document.getElementById("planet" + i).value == "" || document.getElementById("start" + i).value == "" || document.getElementById("end" + i).value == "") {
+                return false;
+            }
+            if(reg.test(document.getElementById("planet" + i).value)){
+                return false;
+            }
+            if(i > 1){
+                if(document.getElementById("end" + (i-1)).value >  document.getElementById("start" + i).value){
+                    return false;
+                }
+            }
+            if(document.getElementById("start" + i).value > document.getElementById("end" + i).value){
+                return false;
+            }
+        }
+        return true;
+    };
+
+    addForm1.addEventListener("click", function() {if (destinationCounter < 3) createForm1Input();});
     createForm1Input();
 }
 
 function stage2() {
     var json_data = [];
+    var dataLenght = 0;
     var attractionCounter = 0;
     var recommendedCounter = 0;
     var selected = 0;
+    var tripForm2 = document.getElementById("tripForm2");
     var recommended = document.getElementById("recommended");
     var attractions = document.getElementById("attractions");
     var searchAttr = document.getElementById("attractionSearch");
@@ -56,7 +89,7 @@ function stage2() {
     var timeFilter = document.getElementById("timeFilter");
     var aiFilter = document.getElementById("aiFilter");
     var elementsFilter = document.getElementById("elementsFilter");
-    var rownum = 0;
+    var rownum = 1;
     var n =133;  /*scroll check*/
     alienFilter.toggleState = false;
     gravityFilter.toggleState = false;
@@ -66,12 +99,10 @@ function stage2() {
 
     $.getJSON("server/get-attr.php", function (data) {
         if(data.length) {
+            dataLenght = data.length;
             json_data = data;
-            for (var row of data) {
-                if (row.attr_id <= 9) {
-                    rownum = row.attr_id;
-                    addAttr();
-                }
+            for (; rownum <= 9; rownum++) {
+                addAttr();
             }
         }
         else {
@@ -88,8 +119,10 @@ function stage2() {
             n+=173;
             for (var i=0; i<3; i++)
             {
-                addAttr();
-                rownum++;
+                if(dataLenght > attractionCounter){
+                    addAttr();
+                    rownum++;
+                }
             }
         }
     };
@@ -247,6 +280,7 @@ function stage2() {
             }
         }
         document.getElementById("selectedAttractions").style.visibility = "visible";
+        document.getElementById("contTrip2").disabled = false;
     }
 
     function hideEmpty(){
@@ -257,6 +291,7 @@ function stage2() {
             }
         }
         document.getElementById("selectedAttractions").style.visibility = "hidden";
+        document.getElementById("contTrip2").disabled = true;
     }
 
     function selectCheck(){
@@ -266,7 +301,7 @@ function stage2() {
         var full = checkedObj.getElementsByClassName("fullSelect")[0];
         var selectedAttr = document.getElementById("selectedNumber");
 
-        if(!document.getElementById(inputId).checked){
+        if(!document.getElementById(inputId).checked && selected < 5){
             if(selected == 0){
                 showEmpty();
             }
@@ -274,17 +309,54 @@ function stage2() {
            empty.style.display = "none";
            full.style.display = "";
            full.innerText = "" + selected;
+           if (selected == 5){
+               disableCheckbox(inputId);
+               hideEmpty();
+               document.getElementById("selectedAttractions").style.visibility = "visible";
+           }
+           selectedAttr.innerText = "" + selected;
         }
-        else{
+        if(document.getElementById(inputId).checked){
             selected--;
+            if (selected < 0) {
+                selected = 0;
+            }
             full.style.display = "none";
             empty.style.display = "";
             reorderSelected(Number(full.innerText));
             if(selected == 0){
                 hideEmpty();
             }
+            else if(selected == 4){
+                enableCheckbox();
+                showEmpty();
+            }
+            selectedAttr.innerText = "" + selected;
         }
-        selectedAttr.innerText = "" + selected;
+    }
+
+    function disableCheckbox(inputId) {
+        for (var i = 0; i < attractionCounter - recommendedCounter; i++){
+            var attr = attractions.getElementsByTagName("input")[i];
+            if(!attr.checked && attr.id != inputId){
+                attr.disabled = true;
+            }
+            if(i < recommendedCounter){
+                var rec = recommended.getElementsByTagName("input")[i];
+                if(!rec.checked && rec.id != inputId){
+                    rec.disabled = true;
+                }
+            }
+        }
+    }
+
+    function enableCheckbox() {
+        for (var i = 0; i < attractionCounter - recommendedCounter; i++){
+            attractions.getElementsByTagName("input")[i].disabled = false;
+            if(i < recommendedCounter) {
+                recommended.getElementsByTagName("input")[i].disabled = false;
+            }
+        }
     }
 
     searchAttr.onkeyup = function attractionsByName() {
@@ -386,6 +458,13 @@ function stage2() {
         }
     }
 
+    tripForm2.onsubmit = function() {
+        if (selected <= 0) {
+            return false;
+        }
+        return true;
+    };
+
     alienFilter.addEventListener("click", function(){attractionsFilterState("alien");});
     gravityFilter.addEventListener("click", function(){attractionsFilterState("gravity");});
     timeFilter.addEventListener("click", function(){attractionsFilterState("timeflow");});
@@ -393,6 +472,7 @@ function stage2() {
     elementsFilter.addEventListener("click", function(){attractionsFilterState("elements");});
 
     document.getElementById("selectedAttractions").style.visibility = "hidden";
+    document.getElementById("contTrip2").disabled = true;
 }
 
 function stage3() {
@@ -558,7 +638,28 @@ function stage3() {
 $(document).ready(function (){
     var continue1 = document.getElementById("contTrip1");
     var continue2 = document.getElementById("contTrip2");
-    continue1.addEventListener("click", function(){stage2();});
-    continue2.addEventListener("click", function(){stage3();});
+    var tripForm1 = document.getElementById("tripForm1");
+    var tripForm2 = document.getElementById("tripForm2");
+    //var tripForm3 = document.getElementById("tripForm3");
+    //continue1.addEventListener("click", function(){if(tripForm1.onsubmit) stage2();});
+    continue1.addEventListener("click", collapse12);
+    //continue2.addEventListener("click", function(){stage3();});
+    continue2.addEventListener("click", collapse23);
     stage1();
+
+    function collapse12() {
+        if(tripForm1.onsubmit()){
+            /*$("#collapse1").collapse('hide');*/
+            $("#collapse2").collapse('toggle');
+            stage2();
+        }
+    }
+
+    function collapse23() {
+        if(tripForm2.onsubmit()){
+            /*$("#collapse2").collapse('hide');*/
+            $("#collapse3").collapse('toggle');
+            stage3();
+        }
+    }
 });
