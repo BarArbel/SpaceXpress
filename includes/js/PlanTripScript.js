@@ -25,19 +25,19 @@ function stage1() {
         planetNameInput.id = "planet" + destinationCounter;
         planetNameInput.required = true;
         planetNameInput.pattern = "[A-Za-z0-9 ]{1,}";
-        planetNameInput.title = "use letters, numbers and spaces only";
+        planetNameInput.title = "Letters, numbers, space";
 
         startDateInput.type = "date";
         startDateInput.name = "start" + destinationCounter;
         startDateInput.id = "start" + destinationCounter;
         startDateInput.required = true;
-        startDateInput.title = "make sure the dates are in a correct order. between destinations too.";
+        startDateInput.title = "Dates should be in correct order";
 
         endDateInput.type = "date";
         endDateInput.name = "end" + destinationCounter;
         endDateInput.id = "end" + destinationCounter;
         endDateInput.required = true;
-        endDateInput.title = "make sure the dates are in a correct order. between destinations too.";
+        endDateInput.title = "Dates should be in correct order";
 
         userID.type = "hidden";
         userID.name = "uid";
