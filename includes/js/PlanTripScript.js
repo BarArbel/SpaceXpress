@@ -47,6 +47,7 @@ function stage1() {
         tripForm1.insertBefore(planetNameInput, addForm1);
         tripForm1.insertBefore(startDateInput, addForm1);
         tripForm1.insertBefore(endDateInput, addForm1);
+        tripForm1.insertBefore(userID, addForm1);
     }
 
     tripForm1.onsubmit = function() {
