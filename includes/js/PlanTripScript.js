@@ -313,6 +313,7 @@ function stage2() {
                disableCheckbox(inputId);
                hideEmpty();
                document.getElementById("selectedAttractions").style.visibility = "visible";
+               document.getElementById("contTrip2").disabled = false;
            }
            selectedAttr.innerText = "" + selected;
         }
