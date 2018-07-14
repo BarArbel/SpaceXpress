@@ -10,7 +10,7 @@
     $numOfAttrInDay =mysqli_fetch_array(mysqli_query($connection, $qGetNumAttrInDay))["num_attr"];
 
     $qGetSumm = "
-    SELECT trip_date, IF(attr1_id, 1, 0) AS place, 1 AS 
+    SELECT day_id, trip_date, IF(attr1_id, 1, 0) AS place, attr1_id AS attr, 1 AS 
     day , name, planet, location AS address, alien, gravity, timeflow, ai, elements
     FROM
         (SELECT * FROM tbl_205_day
@@ -24,7 +24,7 @@
         $qGetSumm .= "
         UNION
     
-        SELECT trip_date, IF(attr". $x . "_id, ". $x . ", 0) AS place, 1 AS day , name, planet, location AS address, alien, gravity, timeflow, ai, elements
+        SELECT day_id, trip_date, IF(attr". $x . "_id, ". $x . ", 0) AS place, attr". $x . "_id AS attr, 1 AS day , name, planet, location AS address, alien, gravity, timeflow, ai, elements
         FROM
             (SELECT * FROM tbl_205_day
                LEFT JOIN tbl_205_attraction ON tbl_205_day.attr". $x . "_id = tbl_205_attraction.attr_id

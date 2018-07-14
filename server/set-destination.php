@@ -35,15 +35,15 @@
     if (!empty($_GET['end2'])) $end2 = fixDateFormat($_GET["end2"]);
     if (!empty($_GET['end3'])) $end3 = fixDateFormat($_GET["end3"]);
 
-    $qSetDest = "INSERT INTO tbl_205_destination (user_id, trip_id, planet_name, arrival_date, depart_date, picture_url) VALUES (4,$trip_id,'$planet_name1',$strt1,$end1,'$pic1'); ";
+    $qSetDest = "INSERT INTO tbl_205_destination (user_id, trip_id, planet_name, arrival_date, depart_date, picture_url) VALUES (4,$trip_id,'$planet_name1','$strt1','$end1','$pic1'); ";
 
     if (!empty($_GET['planet2'])) {
-        $qSetDest .= "INSERT INTO tbl_205_destination (user_id, trip_id, planet_name, arrival_date, depart_date, picture_url) VALUES (4,$trip_id,'$planet_name2',$strt2,$end2,'$pic2'); ";
+        $qSetDest .= "INSERT INTO tbl_205_destination (user_id, trip_id, planet_name, arrival_date, depart_date, picture_url) VALUES (4,$trip_id,'$planet_name2','$strt2','$end2','$pic2'); ";
     }
 
     if (!empty($_GET['planet3'])) {
         $planet_name3 = $_GET["planet3"];
-        $qSetDest .= "INSERT INTO tbl_205_destination (user_id, trip_id, planet_name, arrival_date, depart_date, picture_url) VALUES (4,$trip_id,'$planet_name3',$strt3,$end3,'$pic3'); ";
+        $qSetDest .= "INSERT INTO tbl_205_destination (user_id, trip_id, planet_name, arrival_date, depart_date, picture_url) VALUES (4,$trip_id,'$planet_name3','$strt3','$end3','$pic3'); ";
     }
 
     //create a new trip too

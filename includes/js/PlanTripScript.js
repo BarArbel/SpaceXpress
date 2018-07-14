@@ -482,6 +482,7 @@ function stage3() {
     $.getJSON("server/get-day.php", function (data) {
         json_data = data;
         var prevDay = 0;
+        var summId = 1;
         for (var row of data) {
             if(row.day > prevDay){
                 var day = document.createElement("section");
@@ -499,34 +500,37 @@ function stage3() {
             var dateSplit = (row.trip_date).split(".");
             var container = document.createElement("section");
             var attraction = document.createElement("article");
-            var textInput = document.createElement("input");
-            var numberInput = document.createElement("input");
-            var dateInput = document.createElement("input");
+            var attrInput = document.createElement("input");
+            var attrPlaceInput = document.createElement("input");
+            var dayInput = document.createElement("input");
             var attInfo = document.createElement("a");
             var attInfoIcon = document.createElement("i");
             var attName = document.createElement("h6");
             var attSelect = document.createElement("section");
             var attAddress = document.createElement("h4");
 
+            row.id = summId;
+            summId++;
+
             container.className = "ddContainer";
 
             attraction.id = row.name + "_" + row.planet + "_summary";
             attraction.draggable = true;
 
-            textInput.type = "text";
-            textInput.name = "attraction_text" + row.id;
-            textInput.value = row.name + "_" + row.planet;
-            attraction.appendChild(textInput);
+            dayInput.type = "number";
+            dayInput.name = "dayID" + row.id;
+            dayInput.value = row.day_id;
+            attraction.appendChild(dayInput);
 
-            numberInput.type = "number";
-            numberInput.name = "attraction_number" + row.id;
-            numberInput.value = row.place;
-            attraction.appendChild(numberInput);
+            attrInput.type = "number";
+            attrInput.name = "attrID" + row.id;
+            attrInput.value = row.attr;
+            attraction.appendChild(attrInput);
 
-            dateInput.type = "date";
-            dateInput.name = "attraction_date" + row.id;
-            dateInput.value = dateSplit[2] + "-" + dateSplit[1] + "-" + dateSplit[0];
-            attraction.appendChild(dateInput);
+            attrPlaceInput.type = "number";
+            attrPlaceInput.name = "attrNum" + row.id;
+            attrPlaceInput.value = row.place;
+            attraction.appendChild(attrPlaceInput);
 
             attInfoIcon.className = "fas fa-info-circle";
             attInfo.appendChild(attInfoIcon);
