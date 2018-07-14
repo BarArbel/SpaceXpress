@@ -31,13 +31,13 @@ function stage1() {
         startDateInput.name = "start" + destinationCounter;
         startDateInput.id = "start" + destinationCounter;
         startDateInput.required = true;
-        planetNameInput.title = "make sure the dates are in a correct order. between destinations too.";
+        startDateInput.title = "make sure the dates are in a correct order. between destinations too.";
 
         endDateInput.type = "date";
         endDateInput.name = "end" + destinationCounter;
         endDateInput.id = "end" + destinationCounter;
         endDateInput.required = true;
-        planetNameInput.title = "make sure the dates are in a correct order. between destinations too.";
+        endDateInput.title = "make sure the dates are in a correct order. between destinations too.";
 
         userID.type = "hidden";
         userID.name = "uid";
