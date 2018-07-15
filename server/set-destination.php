@@ -17,16 +17,19 @@
     $user_id = $_GET["uid"];
 
     $planet_name1 = $_GET["planet1"];
-    $pic1 = "images/planet" . picNum($planet_name1) . ".png";
+    $pic1 = picNum($planet_name1) . ".png";
+    /*$pic1 = "images/planet" . picNum($planet_name1) . ".png";*/
 
     if (!empty($_GET['planet2'])) {
         $planet_name2 = $_GET["planet2"];
-        $pic2 = "images/planet" . picNum($planet_name2) . ".png";
+        $pic2 = picNum($planet_name2) . ".png";
+        /*$pic2 = "images/planet" . picNum($planet_name2) . ".png";*/
     }
 
     if (!empty($_GET['planet3'])) {
         $planet_name3 = $_GET["planet3"];
-        $pic3 = "images/planet" . picNum($planet_name3) . ".png";
+        $pic3 = picNum($planet_name3) . ".png";
+        /*$pic3 = "images/planet" . picNum($planet_name3) . ".png";*/
     }
 
     $strt1 = fixDateFormat($_GET["start1"]);
