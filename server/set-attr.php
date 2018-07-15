@@ -17,7 +17,7 @@
             $get_attr_id = "SELECT attr_id FROM tbl_205_attraction WHERE name LIKE '%$attr_val%'";
             $attr_id = mysqli_fetch_array(mysqli_query($connection, $get_attr_id))["attr_id"];
             if ($nth_attr ==1) {
-                $qSetAttrs = "INSERT INTO tbl_205_day (trip_id, trip_date, attr1_id) VALUES ($trip_id,$nth_date,$attr_id); ";
+                $qSetAttrs = "INSERT INTO tbl_205_day (trip_id, trip_date, attr1_id) VALUES ($trip_id,'$nth_date',$attr_id); ";
             }
             else {
                 $attr_tbl_name = 'attr' . $nth_attr . '_id';
