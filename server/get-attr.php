@@ -1,7 +1,7 @@
 <?php
 	include ('db.php');
+	//It takes time for the DB to update
 	sleep(1);
-	//usleep( 500000 );
 
 	$qGetPlanet =  "SELECT planet_name
 						FROM tbl_205_destination plnt 
@@ -28,10 +28,6 @@
 
 	mysqli_close($connection);
 
-	/* to do list:
-	V Check why not all attractions are loaded??????
-	-Avoid using sleep, first it needs to upload to the server and then get stuff out of it
-	 */
 ?>
 
 

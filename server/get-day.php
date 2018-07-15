@@ -1,5 +1,6 @@
 <?php
     include ('db.php');
+    //It takes time for the DB to update
     sleep(2);
     $get_latest_trip = "SELECT MAX(trip_id) AS max_trip FROM tbl_205_trip";
     $trip_id = mysqli_fetch_array(mysqli_query($connection, $get_latest_trip))["max_trip"];
@@ -52,10 +53,4 @@
 
     mysqli_close($connection);
 
-    /* to do list:
-    -JSON that has
-    "name":"Mann","planet":"HD 219134 b","day":3,"date":"05.04.2118","address":"5467.23;2003.04;5801.67;0.00021","place":1,"alien":false,"gravity":false,"timeflow":false,"ai":false,"elements":true
-     need to join day table and attraction table via
-    - change day to be dynamic.... instead of 1.....? AHAHAHAHHAA
-    */
 ?>

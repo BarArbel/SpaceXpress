@@ -538,16 +538,6 @@ main h2 {
     border: 1pt solid #cccccc;
 }
 
-#tripForm1 input:nth-child(4n-4){
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-}
-
-#tripForm1 input:nth-child(4n-2){
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
-
 #addForm1{
     margin-left: 12px;
     background-color: #222222;

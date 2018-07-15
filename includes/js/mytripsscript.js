@@ -12,7 +12,7 @@ function getUserID() {
 function getData () {
     var user_id = getUserID();
     var json_data = [];
-    /*$.getJSON("server/get-trips.php", function (data) {*/
+
     $.getJSON("server/get-trips.php?user_id="+user_id, function (data) {
         json_data = data;
         for (var trip of data) {
@@ -78,8 +78,6 @@ function getData () {
 
             $(timeline).append(buttons);
             $('#trips').append(timeline);
-
-            /*$('#trips').append(trips);*/
         }
 
     });

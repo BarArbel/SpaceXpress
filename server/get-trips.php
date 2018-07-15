@@ -39,7 +39,6 @@
         return $q;
     }
 
-    /*$user_id =1;*/
     if(!empty($_GET['user_id'])) {
         $user_id =$_GET['user_id'];
     }
@@ -77,10 +76,5 @@
         mysqli_free_result($result);
 
         mysqli_close($connection);
-
-        /* to do list:
-
-         */
-
 
 ?>
