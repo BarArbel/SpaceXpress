@@ -637,7 +637,12 @@ function stage3() {
         }
     }
 
-    document.getElementById('save').addEventListener("submit", function(){console.log("yo"); window.open('mytrips.html', '_self');});
+    document.getElementById('save').addEventListener("submit", function(){console.log("yo"); window.open('mytrips.html?uid=' + getUserID(), '_self');});
+}
+
+function getUserID() {
+    var url = window.location.href;
+    return (url.split('uid=')[1]);
 }
 
 
@@ -648,6 +653,10 @@ $(document).ready(function (){
     var tripForm2 = document.getElementById("tripForm2");
     continue1.addEventListener("click", collapse12);
     continue2.addEventListener("click", collapse23);
+
+    document.getElementsByClassName('w3-bar-item')[0].href += '?uid=' + getUserID();
+    document.getElementById('logo').href += '?uid=' + getUserID();
+
     stage1();
 
     function collapse12() {

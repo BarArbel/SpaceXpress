@@ -1,4 +1,7 @@
 $( document ).ready(function() {
+    document.getElementsByClassName('w3-bar-item')[0].href += '?uid=' + getUserID();
+    document.getElementById('logo').href += '?uid=' + getUserID();
+
     getData();
     selected();
     $('#myModal').modal('show');
@@ -81,10 +84,10 @@ function getData () {
         }
 
     });
-    var delOpt = getElementsByClassName('deleteTrip');
+    var delOpt = document.getElementsByClassName('deleteTrip');
     console.log(delOpt.length);
-    for (i=0; i< delOpt.length; i++) {
-        document.delOpt[i].addEventListener("submit", function () {
+    for (var i=0; i< delOpt.length; i++) {
+        delOpt[i].addEventListener("submit", function () {
             console.log("yo");
             window.open('mytrips.html?uid=' + user_id, '_self');
         });

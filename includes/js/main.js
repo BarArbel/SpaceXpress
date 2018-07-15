@@ -182,6 +182,15 @@ $( document ).ready(function() {
     for (var i=0; i<check.length; i++) {
         check[i].addEventListener("click",changeForm);
     }
+
+    function getUserID() {
+        var url = window.location.href;
+        return (url.split('uid=')[1]);
+    }
+
+    document.getElementsByClassName('w3-bar-item')[0].href += '?uid=' + getUserID();
+    document.getElementById('logo').href += '?uid=' + getUserID();
+
     addFlight();
     document.getElementsByTagName('input')[7].disabled = true;
     getData();
