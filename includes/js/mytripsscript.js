@@ -1,9 +1,6 @@
 $( document ).ready(function() {
     getData();
     selected();
-    $(".deleteTrip .btn btn-secondary").click(function() {
-        location.reload(true);
-    });
     $('#myModal').modal('show');
 });
 
@@ -70,9 +67,9 @@ function getData () {
                 '<section class="buttons">'+
                     '<button class="btn btn-secondary" data-toggle="modal" data-target="#myModal" type="submit"><i class="fas fa-pencil-alt"></i> Edit Trip</button>'+
                     '<button class="btn btn-secondary" data-toggle="modal" data-target="#myModal" type="submit"><i class="fas fa-book"></i> Journal</button>'+
-                    '<form class= "deleteTrip" action="server/delete-trip.php" method="get" target="frame">'+
-                        '<iframe name="frame" hidden></iframe>'+
-                        '<button class="btn btn-secondary" data-toggle="model" data-target="#myModal" type="submit"><i class="fas fa-trash-alt"></i> Delete Trip</button>'+
+                    '<form class= "deleteTrip" action="server/delete-trip.php" method="get" target="frame5">'+
+                        '<iframe name="frame5" hidden></iframe>'+
+                        '<button class="delTrip btn btn-secondary" data-toggle="model" data-target="#myModal" type="submit"><i class="fas fa-trash-alt"></i> Delete Trip</button>'+
                         '<input type="hidden" name="del" value="'+trip.trp+'">'+
                     '</form>'+
                     '<button class="btn btn-secondary" data-toggle="modal" data-target="#myModal" type="submit">'+trip.flightstatus+'</button>'+
@@ -86,7 +83,16 @@ function getData () {
         }
 
     });
+    var delOpt = getElementsByClassName('deleteTrip');
+    console.log(delOpt.length);
+    for (i=0; i< delOpt.length; i++) {
+        document.delOpt[i].addEventListener("submit", function () {
+            console.log("yo");
+            window.open('mytrips.html?uid=' + user_id, '_self');
+        });
+    }
 }
+
 
 function selected() {
     $('header li:nth-of-type(4)').css("background-color", "#ffffff");
