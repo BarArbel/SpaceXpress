@@ -86,10 +86,10 @@ function getData () {
         }
 
     });
-    var delOpt = getElementsByClassName('deleteTrip');
+    var delOpt = document.getElementsByClassName('deleteTrip');
     console.log(delOpt.length);
-    for (i=0; i< delOpt.length; i++) {
-        document.delOpt[i].addEventListener("submit", function () {
+    for (var i=0; i< delOpt.length; i++) {
+        delOpt[i].addEventListener("submit", function () {
             console.log("yo");
             window.open('mytrips.html?uid=' + user_id, '_self');
         });
