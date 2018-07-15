@@ -1,4 +1,7 @@
 $( document ).ready(function() {
+    document.getElementsByClassName('w3-bar-item')[0].href += '?uid=' + getUserID();
+    document.getElementById('logo').href += '?uid=' + getUserID();
+
     getData();
     selected();
     $(".deleteTrip .btn btn-secondary").click(function() {
