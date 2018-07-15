@@ -805,6 +805,11 @@ main h2 {
     margin-right: 55px;
 }
 
+.guest {
+    display: inline;
+    width: 25%;
+}
+
 
 /*-------------------- my trips --------------------*/
 
