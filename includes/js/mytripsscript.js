@@ -1,6 +1,9 @@
 $( document ).ready(function() {
     getData();
     selected();
+    $(".deleteTrip .btn btn-secondary").click(function() {
+        location.reload(true);
+    });
     $('#myModal').modal('show');
 });
 
@@ -12,28 +15,10 @@ function getUserID() {
 function getData () {
     var user_id = getUserID();
     var json_data = [];
-    $.getJSON("server/get-trips.php", user_id, function (data) {
-        console.log(data);
+    /*$.getJSON("server/get-trips.php", function (data) {*/
+    $.getJSON("server/get-trips.php?user_id="+user_id, function (data) {
         json_data = data;
         for (var trip of data) {
-            /*var trips = $(
-            '<section class="tripTimeline">' +
-                '<h3>'+trip.name+'</h3>' +
-                '<section>' +
-                    '<section class="line"></section>'+
-                    '<section><img src="'+trip.pic1+'">'+trip.date1+'</section>'+
-                    '<section><img src="'+trip.pic2+'">'+trip.date2+'</section>'+
-                    '<section><img src="'+trip.pic3+'">'+trip.date3+'</section>'+
-                '</section>'+
-                 '<section class="buttons">'+
-                    '<button class="btn btn-secondary" data-toggle="modal" data-target="#myModal" type="submit"><i class="fas fa-pencil-alt"></i> Edit Trip</button>'+
-                    '<button class="btn btn-secondary" data-toggle="modal" data-target="#myModal" type="submit"><i class="fas fa-book"></i> Journal</button>'+
-                    '<button class="btn btn-secondary" data-toggle="modal" data-target="#myModal" type="submit">'+trip.flightstatus+'</button>'+
-                    '<button class="btn btn-secondary" data-toggle="model" data-target="#myModal" type="submit"><i class="fas fa-trash-alt"></i> Delete Trip</button>'+
-                 '</section>'+
-            '</section>'
-
-        );*/
 
             var timeline = document.createElement("section");
             var tripName = document.createElement("h3");
@@ -85,7 +70,11 @@ function getData () {
                 '<section class="buttons">'+
                     '<button class="btn btn-secondary" data-toggle="modal" data-target="#myModal" type="submit"><i class="fas fa-pencil-alt"></i> Edit Trip</button>'+
                     '<button class="btn btn-secondary" data-toggle="modal" data-target="#myModal" type="submit"><i class="fas fa-book"></i> Journal</button>'+
-                    '<button class="btn btn-secondary" data-toggle="model" data-target="#myModal" type="submit"><i class="fas fa-trash-alt"></i> Delete Trip</button>'+
+                    '<form class= "deleteTrip" action="server/delete-trip.php" method="get" target="frame">'+
+                        '<iframe name="frame" hidden></iframe>'+
+                        '<button class="btn btn-secondary" data-toggle="model" data-target="#myModal" type="submit"><i class="fas fa-trash-alt"></i> Delete Trip</button>'+
+                        '<input type="hidden" name="del" value="'+trip.trp+'">'+
+                    '</form>'+
                     '<button class="btn btn-secondary" data-toggle="modal" data-target="#myModal" type="submit">'+trip.flightstatus+'</button>'+
                 '</section>'
             );
