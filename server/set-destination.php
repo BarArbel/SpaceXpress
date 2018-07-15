@@ -18,18 +18,15 @@
 
     $planet_name1 = $_GET["planet1"];
     $pic1 = picNum($planet_name1) . ".png";
-    /*$pic1 = "images/planet" . picNum($planet_name1) . ".png";*/
 
     if (!empty($_GET['planet2'])) {
         $planet_name2 = $_GET["planet2"];
         $pic2 = picNum($planet_name2) . ".png";
-        /*$pic2 = "images/planet" . picNum($planet_name2) . ".png";*/
     }
 
     if (!empty($_GET['planet3'])) {
         $planet_name3 = $_GET["planet3"];
         $pic3 = picNum($planet_name3) . ".png";
-        /*$pic3 = "images/planet" . picNum($planet_name3) . ".png";*/
     }
 
     $strt1 = fixDateFormat($_GET["start1"]);
@@ -64,18 +61,5 @@
 
 mysqli_close($connection);
 
-
-
-/* to do list:
-V check if dest2 and 3 are available and add them as well.
-V create a new trip that will co-respond to the destination we're creating
-v create 4 more pics to use randomly? i guess? depending on a digit
--change user id to be dynamic (get it from the form automatically)
-v change the pic to be dynamic, something about mod
--Fix the dates, they are 0000-00-00 for some reason
--die */
-
-
-/*i deleted from the trip tbl the day_id and the dest_id lol */
 ?>
 

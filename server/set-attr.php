@@ -38,9 +38,5 @@
 
 
     mysqli_close($connection);
-    /* to do list:
-    -Check if Day already has a random date, if yes- gotta ++ the date value we play with
-    V Change date collumn name to trip_date
-     */
 
 ?>

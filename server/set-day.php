@@ -25,9 +25,5 @@
 
 
     mysqli_close($connection);
-    /* to do list:
-    -Check NULL stuff when a title is given (... which happens later in another form...)
-
-     */
 
 ?>

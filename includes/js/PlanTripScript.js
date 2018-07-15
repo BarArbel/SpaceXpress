@@ -651,10 +651,7 @@ $(document).ready(function (){
     var continue2 = document.getElementById("contTrip2");
     var tripForm1 = document.getElementById("tripForm1");
     var tripForm2 = document.getElementById("tripForm2");
-    //var tripForm3 = document.getElementById("tripForm3");
-    //continue1.addEventListener("click", function(){if(tripForm1.onsubmit) stage2();});
     continue1.addEventListener("click", collapse12);
-    //continue2.addEventListener("click", function(){stage3();});
     continue2.addEventListener("click", collapse23);
 
     document.getElementsByClassName('w3-bar-item')[0].href += '?uid=' + getUserID();
@@ -664,7 +661,7 @@ $(document).ready(function (){
 
     function collapse12() {
         if(tripForm1.onsubmit()){
-            /*$("#collapse1").collapse('hide');*/
+
             $("#collapse2").collapse('toggle');
             stage2();
         }
@@ -672,7 +669,7 @@ $(document).ready(function (){
 
     function collapse23() {
         if(tripForm2.onsubmit()){
-            /*$("#collapse2").collapse('hide');*/
+
             $("#collapse3").collapse('toggle');
             stage3();
         }
