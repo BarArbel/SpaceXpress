@@ -125,7 +125,7 @@
                     </div>
                     <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordion">
                         <div class="card-body">
-                            <form id="tripForm3" action="server/set-day.php" method="get" > <!--target="frame3">-->
+                            <form id="tripForm3" action="server/set-day.php" method="get" target="frame3">
                                 <iframe name="frame3" hidden></iframe>
                                 <button id="contTrip3" class="btn btn-secondary" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" type="submit">Add to 'My Trips'</button>
                                 <button id="print" class="btn btn-secondary" type="button"><i class="fas fa-print"></i></button>
@@ -147,11 +147,15 @@
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
-                    <form  id="save" action="#" method="get" target="frame4">
+                    <form  id="save" action="server/set-trip.php" method="get"> <!--target="frame4">-->
                         <iframe name="frame4" hidden></iframe>
                         <div class="modal-body">
                             <h4 class="modal-title">Name your Trip:</h4>
                             <input class="form-control" type="text" id="groupName" name="groupName" required>
+                            <h4 class="modal-title">Group travel</h4>
+                            <input class="guest" type="number" name="guest1" title="Guest user ID">
+                            <input class="guest" type="number" name="guest2" title="Guest user ID">
+                            <input class="guest" type="number" name="guest3" title="Guest user ID">
 
                         </div>
                         <div class="modal-footer">
@@ -168,6 +172,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     <script src="includes/js/PlanTripScript.js"></script>
-    <script src="includes/js/headerScript.js"></script>
+    <!--<script src="includes/js/headerScript.js"></script>-->
 </body>
 </html>
